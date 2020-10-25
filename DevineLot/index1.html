@@ -29,8 +29,10 @@
     }
 	
 	.qian{
-		width: 300px;
-		height: 300px;
+		//width: 300px;
+		//height: 300px;
+		max-width: 200px;
+		height: auto;
 		position: absolute;
 		left: 230px;
 		top:400px;
@@ -48,8 +50,10 @@
 
 	
 	#item {
-	  width: 552px;
-      height: 584px;
+	  //width: 552px;
+      //height: 584px;
+	  max-width: 452px;
+      height: auto;
 	  position: absolute;
 	  top: 300px;
 	  left: 100px;
@@ -184,7 +188,7 @@ console.log(qianChosen);
 qianChosen = qian + random_num;
 console.log(qianChosen);
 console.log("random number",  random_num);
-document.getElementById(qianChosen).style.left= "430px";
+document.getElementById(qianChosen).style.left= "230px";
 document.getElementById(qianChosen).style.top= "400px";
 var y=document.getElementById(qianChosen).offsetTop;
 var x=document.getElementById(qianChosen).offsetLeft;
@@ -199,7 +203,7 @@ function disp(){
 	var x=document.getElementById(qian+random_num).offsetLeft;
 	//console.log('y_disp', y);
 
-	if(y >= 120 ){
+	if(y >= 180 ){
 		dir = 'up';
 		y = y - step;
 		//console.log('y1', y);
