@@ -1,0 +1,44 @@
+FortuneWheel directly
+
+After .mainRing
+
+		.mainRing:after{
+			position: absolute;
+			content: '';
+			width: 32px;
+			height: 32px;
+			background: url('Left Arrow Png.png') no-repeat;
+			background-size: 32px;
+			right: -30px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+After WheelOut.png's img.
+				<div class=section2>
+					<span class=span1><b>五</b></span>
+					<span class=span2><b>六</b></span>
+					<span class=span3><b>七</b></span>
+					<span class=span4><b>八</b></span>
+				</div>
+				<div class=section1>
+					<span class=span1><b>一</b></span>
+					<span class=span2><b>二</b></span>
+					<span class=span3><b>三</b></span>
+					<span class=span4><b>四</b></span>
+				</div>
+Bottom of Script
+
+	var locked = false;
+
+	function alertStatus () {
+		if (!locked) {
+			locked = true;
+			setTimeout(unlock, 1000);
+			$('#doneStatus').hide();
+			$('#loadingStatus').show();
+		}
+	}
+
+	function unlock () {
+		locked = false;
+	}

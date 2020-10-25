@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Wheel of Fortune</title>
+	<style>
+		button.link { background:none;border:none; }
+		*{
+			box-sizing: border-box;
+			padding: 0;
+			margin: 0;
+			outline: none;
+		}
+		body{
+			font-family= Open Sans;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			overflow: hidden;
+			background: #FB143E;
+			background-size: cover;
+		}
+		.mainRing{
+			position: relative;
+			width: 500px;
+			height: 500px;
+		}
+
+		.mainRing:after{
+			position: absolute;
+			content: '';
+			width: 32px;
+			height: 32px;
+			background: url('Left Arrow Png.png') no-repeat;
+			background-size: 32px;
+			top: -20px;
+			left: 45%;
+		}
+		.section{
+			width: 100%;
+			height: 100%;
+			position: relative;
+			border-radius: 50%;
+			border: 10px solid #FB143E;
+			overflow: hidden;
+			transition: all ease 5s;
+		}
+		span{
+			width: 50%;
+			height: 50%;
+			display: inline-block;
+			position: absolute;
+		}
+		.span1{
+			clip-path: polygon(0 92%, 100%  50%, 0 8%);
+			background-color: #749EB2;
+			top: 120px;
+			left: 0;
+		}
+		.span2{
+			clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+			background-color: #BD8E83;
+			top: 120px;
+			right: 0;
+		}
+		.span3{
+			clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+			background-color: #E9DAC4;
+			bottom: 0;
+			left: 120px;
+		}
+		.span4{
+			clip-path: polygon(50% 100%, 92% 0, 8% 0);
+			background-color: #AC8E60;
+			top: 0;
+			left: 120px;
+		}
+		.section2{
+			width: 100%;
+			height: 100%;
+			transform: rotate(-135deg);
+		}
+		span b{
+			width: 65px;
+			height: 65px;
+			line-height: 65px;
+			border-radius: 50%;
+			font-size: 26px;
+			text-align: center;
+			background-color: #FB143E;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			box-shadow: inset 0 3px 3px 0 #717171;
+		}
+		.spin{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 130px;
+			height: 130px;
+			border-radius: 50%;
+			border: 2px solid #000000;
+			background-color: #000000;
+			color: #000000;
+			box-shadow: 0 5px 20px #000;
+			//font-weight: bold;
+			//font-size: 22px;
+			cursor: pointer;
+		}
+		.spin:active{
+			//to change size on button press...
+			width: 125px;
+			height: 125px;
+			//font-size: 20px;
+		}
+		.mainRing.animate:after{
+			animation: animateArrow 0.7s ease infinite;
+		}
+		@keyframes animateArrow{
+			50%{
+				right: -40px;
+		}
+    		.OnTop
+    		{
+    			position: absolute;
+    			top: 0;
+    			left: 0;
+    		}
+	</style>
+</head>
+<body>
+		<b style="text-align: center;font-size:30px;color:#F5F5DC">Spin the<br>Wheel of Fortune<br>now!</b>
+		<div id= 'mainRing' class=mainRing>
+			<div id='section' class=section>
+				<img src="WheelOut.png" style="width:490px;height:490px;">
+			</div>
+			<button class=spin onclick=wheelBrr();this.onclick=null;><img src="WheelButton.png" style="width:130px;height:130px;"/></button>
+		</div>
+		<b style="text-align: center;font-size:30px;color:#F5F5DC">马上<br>转转转<br>发发发吧!</b>
+<script>
+
+	function wheelBrr(){
+
+		var valueList = ["1 一","2 十五","2 十二","2 十一","2 十","2 九","2 八","2 七","2 六","2 五","2 三","2 二","2 一","1 十五","1 十二","1 十一","1 十","1 九","1 八","1 七","1 六","1 五","1 三","1 二"];
+		var Decided = Math.floor(Math.random() * valueList.length);
+		var Rotation = (Decided * 15) + Math.floor(Math.random(0,4) + 7190);
+		console.log(Rotation, Decided);
+		document.getElementById('section').style.transform = "rotate("+Rotation+"deg)";
+
+		var element = document.getElementById('mainRing');
+
+		setTimeout(
+			function(){
+				console.log(Decided);
+				var getValue = valueList[Decided];
+				alert(getValue);
+				var win = window.open("Result.html", '_blank');
+				win.focus();
+			}, 
+			5000);
+	}
+</script>
+</body>
+</html>

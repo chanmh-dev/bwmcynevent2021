@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  background-image: url("Images/BuddhaStatue.jpg");
+
+  height: 100%; 
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+#instructions{
+font-size:30px;
+}
+#cup1{
+position:relative;
+height:10%;
+top:1150px;
+left:15%;
+animation-name:anim;
+animation-duration: 16s;
+animation: anim 1.0s forwards;
+animation-delay:1.5s;
+transition:width 1s ease-in;
+}
+#cup2{
+position:relative;
+height:10%;
+top:1150px;
+left:30%;
+}
+#cup3{
+position:relative;
+height:10%;
+top:1150px;
+left:45%;
+
+}
+
+#cup4{
+position:relative;
+height:10%;
+top:1150px;
+left:60%;
+}
+
+@keyframes anim{
+  0%   {left:15%; top:1150px;}
+  25%  {left:20%; top:1000px;}
+  50%  {left:28%; top:850px;}
+  75%  {left:35%; top:700px;}
+  100% {left:47%; top:550px;}
+
+}
+
+
+</style>
+</head>
+<body>
+<header>
+<center><p id="instructions">
+Please do your supplication and click Next when you are done.</p></center>
+</header>
+
+<div class="bg">
+<img id="cup1" src="Images/watercup.png">
+<img id="cup2" src="Images/cup2.png" >
+<img id="cup3" src="Images/cup3.png">
+<img id="cup4" src="Images/cup4.png">
+
+</div>
+<button name="btnback" type = "button" style="float:left" onclick="window.location.href='WaterOffering2.html';">Back</button>
+<button name="btnnext" type = "button" style="float:right"  onclick="window.location.href='lastpage1.html';">Next</button>
+
+</body>
+</html>
