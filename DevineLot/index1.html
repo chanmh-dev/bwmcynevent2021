@@ -34,10 +34,11 @@
 		max-width: 200px;
 		height: auto;
 		position: absolute;
-		left: 230px;
-		top:400px;
+		left: 145px;
+		top:350px;
 		display: none;
     }	
+	
 	
 	#qian1{
 		z-index: 1;
@@ -61,6 +62,12 @@
 	  //display: none;
     }
 	
+	//@media screen and (max-width: 767px){   
+		//#item{      
+			//content:url("./qtong-small.png");
+		//} 
+	//}
+	
 	
   </style>
 </head>
@@ -73,7 +80,7 @@
 -->	
   <div id="outerContainer">
     <div id="container">
-		<img src="./qtong.png"  id="item">
+		<img src="./qtong-small.png"  id="item">
 		<img src="./qian1.png"  id="qian1" class="qian">
 		<img src="./qian2.png"  id="qian2" class="qian">
 		<img src="./qian3.png"  id="qian3" class="qian">
@@ -188,8 +195,8 @@ console.log(qianChosen);
 qianChosen = qian + random_num;
 console.log(qianChosen);
 console.log("random number",  random_num);
-document.getElementById(qianChosen).style.left= "230px";
-document.getElementById(qianChosen).style.top= "400px";
+document.getElementById(qianChosen).style.left= "145px";
+document.getElementById(qianChosen).style.top= "350px";
 var y=document.getElementById(qianChosen).offsetTop;
 var x=document.getElementById(qianChosen).offsetLeft;
 //document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
