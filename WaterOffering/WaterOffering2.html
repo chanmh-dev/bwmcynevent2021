@@ -1,15 +1,268 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.brightness { filter: brightness(0.25); }
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 12.50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.cups {
+  transform: scale(1); 
+  height:100% ;
+  
+  background-repeat: no-repeat;
+}
+
+@keyframes transitioncup1{
+	from{
+	transform: scale(1);
+	top:0px;
+	left:2%;
+	}
+	to{
+	transform: scale(2);
+    top:-200px;
+    left:400%;
+	}
+}
+
+@keyframes transitioncup2{
+	from{
+	transform: scale(1);
+	top:0px;
+	left:2%;
+	}
+	to{
+	transform: scale(2);
+    top:-200px;
+    left:295%;
+	}
+}
+
+@keyframes transitioncup3{
+	from{
+	transform: scale(1);
+	top:0px;
+	left:2%;
+	}
+	to{
+	transform: scale(2);
+    top:-200px;
+    left:190%;
+	}
+}
+
+@keyframes transitioncup4{
+	from{
+	transform: scale(1);
+	top:0px;
+	left:2%;
+	}
+	to{
+	transform: scale(2);
+    top:-200px;
+    left:80%;
+	}
+}
+
+@keyframes transitioncup5{
+	from{
+	transform: scale(1);
+	top:0px;
+	left:2%;
+	}
+	to{
+	transform: scale(2);
+    top:-200px;
+    left:-25%;
+	}
+}
+
+@keyframes transitioncup6{
+	from{
+	transform: scale(1);
+	top:0px;
+	left:2%;
+	}
+	to{
+	transform: scale(2);
+    top:-200px;
+    left:-130%;
+	}
+}
+
+@keyframes transitioncup7{
+	from{
+	transform: scale(1);
+	top:0px;
+	left:2%;
+	}
+	to{
+	transform: scale(2);
+    top:-200px;
+    left:-240%;
+	}
+}
+
+@keyframes transitioncup8{
+	from{
+	transform: scale(1);
+	top:0px;
+	left:2%;
+	}
+	to{
+	transform: scale(2);
+    top:-200px;
+    left:-348%;
+	}
+}
+
+#cup1{
+	animation-duration:5s;
+	animation-fill-mode:forwards;
+	box-shadow: 0px 0px 600px #fff;
+	position:relative;
+	height:10%;
+	max-width: 100%;
+	top:0px;
+	left:0%;
+}
+
+@keyframes transitionoutcup1{
+	from{
+	box-shadow:0px 0px 0px #fff;
+	transform: scale(2);
+	top:-200px;
+	left:378%;
+	}
+	to{
+	box-shadow:0px 0px 0px #fff;
+	transform: scale(1);
+	top:0px;
+	left:378%;
+	}
+}
+
+#cup2{
+	animation-duration:5s;
+	animation-fill-mode:forwards;
+	box-shadow: 0px 0px 600px #fff;
+	position:relative;
+	height:10%;
+	max-width: 100%;
+	top:0px;
+	left:0%;
+}
+
+#cup3{
+	animation-duration:5s;
+	animation-fill-mode:forwards;
+	box-shadow: 0px 0px 600px #fff;
+	position:relative;
+	height:10%;
+	max-width: 100%;
+	top:0px;
+	left:0%;
+}
+
+#cup4{
+	animation-duration:5s;
+	animation-fill-mode:forwards;
+	box-shadow: 0px 0px 600px #fff;
+	position:relative;
+	height:10%;
+	max-width: 100%;
+	top:0px;
+	left:0%;
+}
+
+
+#cup5{
+	animation-duration:5s;
+	animation-fill-mode:forwards;
+	box-shadow: 0px 0px 600px #fff;
+	position:relative;
+	height:10%;
+	max-width: 100%;
+	top:0px;
+	left:0%;
+}
+
+#cup6{
+	animation-duration:5s;
+	animation-fill-mode:forwards;
+	box-shadow: 0px 0px 600px #fff;
+	position:relative;
+	height:10%;
+	max-width: 100%;
+	top:0px;
+	left:0%;
+}
+
+#cup7{
+	animation-duration:5s;
+	animation-fill-mode:forwards;
+	box-shadow: 0px 0px 600px #fff;
+	position:relative;
+	height:10%;
+	max-width: 100%;
+	top:0px;
+	left:0%;
+}
+
+#cup8{
+	animation-duration:5s;
+	animation-fill-mode:forwards;
+	box-shadow: 0px 0px 600px #fff;
+	position:relative;
+	height:10%;
+	max-width: 100%;
+	top:0px;
+	left:0%;
+}
+
+@keyframes transitionoutcup8{
+	from{
+	box-shadow:0px 0px 0px #fff;
+	transform: scale(2);
+	top:-200px;
+	left:-348%;
+	}
+	to{
+	box-shadow:0px 0px 0px #fff;
+	transform: scale(1);
+	top:0px;
+	left:-348%;
+	}
+}
+
+
+#instructions{
+font-size:30px;
+}
+
+body, html {
+  //height: 100%;
+ // margin: 0;
+  background-color:red;
+}
 
 #buttonnext{
 position:absolute;
 right:50%;
-
-
 }
 #btnnext{
 display:none;
@@ -119,649 +372,381 @@ display:none;
   cursor: pointer;
   border-radius:12px;
 }
-body, html {
-  height: 100%;
-  margin: 0;
-  color:yellow;
-}
-
-body, html {
-  height: 100%;
-  margin: 0;
-  background-color:red;
-}
-
-.bg {
-  background-image: url("Images/altar3.jpg");
-
-  height: 100%; 
-
-  background-position: center;
-  background-repeat: no-repeat;
-  //background-size: 100% 100%;
-  background-size: contain;
-}
-@keyframes transitioncup1{
-from{
-filter: brightness(100%);
-transform: scale(1);
-top:1300px;
-left:2%;
-}
-to{
-filter: brightness(300%);
-transform: scale(2);
-top:900px;
-left:46.5%;
-}
-}
-@keyframes transitioncup2{
-from{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1300px;
-left:14%;
-}
-to{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-}
-@keyframes transitioncup3{
-from{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1300px;
-left:26.48%;
-}
-to{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-}
-@keyframes transitioncup4{
-from{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1300px;
-left:38%;
-}
-to{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:45%;
-}
-}
-@keyframes transitioncup5{
-from{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1300px;
-left:52.3%;
-}
-to{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:47%;
-}
-}
-@keyframes transitioncup6{
-from{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1300px;
-left:64%;
-}
-to{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-}
-@keyframes transitioncup7{
-from{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1300px;
-left:76.5%;
-}
-to{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:47%;
-}
-}
-@keyframes transitioncup8{
-from{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1300px;
-left:88%;
-}
-to{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-}
 
 
-
-
-
-
-#instructions{
-font-size:30px;
-}
-#cup1{
-animation-duration:5s;
-animation-fill-mode:forwards;
-position:relative;
-height:10%;
-top:1300px;
-left:2%;
-}
-
-
-#cup2{
-position:relative;
-height:10%;
-top:1300px;
-left:7%;
-}
-@keyframes transitionoutcup2{
-from{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-to{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1150px;
-left:46%;
-}
-}
-#cup3{
-position:relative;
-height:10%;
-top:1300px;
-left:12%;
-}
-@keyframes transitionoutcup3{
-from{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-to{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1150px;
-left:46%;
-}
-}
-#cup4{
-position:relative;
-height:10%;
-top:1300px;
-left:17%;
-}
-@keyframes transitionoutcup4{
-from{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-to{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1150px;
-left:46%;
-}
-}
-#cup5{
-position:relative;
-height:10%;
-top:1300px;
-left:22%;
-}
-@keyframes transitionoutcup5{
-from{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-to{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1150px;
-left:46%;
-}
-}
-#cup6{
-position:relative;
-height:10%;
-top:1300px;
-left:27%;
-}
-@keyframes transitionoutcup6{
-from{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-to{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1150px;
-left:46%;
-}
-}
-#cup7{
-position:relative;
-height:10%;
-top:1300px;
-left:32%;
-}
-@keyframes transitionoutcup7{
-from{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-to{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1150px;
-left:46%;
-}
-}
-
-#cup8 {
-position:relative;
-height:10%;
-top:1300px;
-left:37%;
-}
-@keyframes transitionoutcup8{
-from{
-filter: brightness(300%);
-
-transform: scale(2);
-top:900px;
-left:46%;
-}
-to{
-filter: brightness(100%);
-
-transform: scale(1);
-top:1150px;
-left:46%;
-}
-}
 </style>
+
 <script>
 function ani(){
-document.getElementById("cup1").style.animation="transitioncup1 5s";
-document.getElementById("cup1").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = "";
-document.getElementById("cup2").style.display='none';
-document.getElementById("cup3").style.display='none';
-document.getElementById("cup4").style.display='none';
-document.getElementById("cup5").style.display='none';
-document.getElementById("cup6").style.display='none';
-document.getElementById("cup7").style.display='none';
-document.getElementById("cup8").style.display='none';
-var x = document.getElementById("btnnext");
+		
+	document.getElementById("cup2").style.display='none';
+	document.getElementById("cup3").style.display='none';
+	document.getElementById("cup4").style.display='none';
+	document.getElementById("cup5").style.display='none';
+	document.getElementById("cup6").style.display='none';
+	document.getElementById("cup7").style.display='none';
+	document.getElementById("cup8").style.display='none';
 
-var delayinmiliseconds = 5000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
+	document.getElementById("cup1").style.animation="transitioncup1 5s";
+	document.getElementById("cup1").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = "";
+	
+	var x = document.getElementById("btnnext");
+	var delayinmiliseconds = 5000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-x.style.display="block";
+	x.style.display="block";
 
-},delayinmiliseconds);
-
-
+	},delayinmiliseconds);
 }
+
 function ani2(){
-document.getElementById("cup2").style.animation="transitioncup2 5s";
-document.getElementById("cup2").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = "";
-document.getElementById("cup1").style.display='none';
-document.getElementById("cup3").style.display='none';
-document.getElementById("cup4").style.display='none';
-document.getElementById("cup5").style.display='none';
-document.getElementById("cup6").style.display='none';
-document.getElementById("cup7").style.display='none';
-document.getElementById("cup8").style.display='none';
-var x = document.getElementById("btnnext2");
-var delayinmiliseconds = 5000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-x.style.display="block";
+	document.getElementById("cup1").style.display='none';
+	document.getElementById("cup3").style.display='none';
+	document.getElementById("cup4").style.display='none';
+	document.getElementById("cup5").style.display='none';
+	document.getElementById("cup6").style.display='none';
+	document.getElementById("cup7").style.display='none';
+	document.getElementById("cup8").style.display='none';
+	
+	document.getElementById("cup2").style.animation="transitioncup2 5s";
+	document.getElementById("cup2").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = "";
+	
+	var x = document.getElementById("btnnext2");
+	var delayinmiliseconds = 5000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-},delayinmiliseconds);
+	x.style.display="block";
+
+	},delayinmiliseconds);
 }
+
 function ani3(){
-document.getElementById("cup3").style.animation="transitioncup3 5s";
-document.getElementById("cup3").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = "";
-document.getElementById("cup2").style.display='none';
-document.getElementById("cup1").style.display='none';
-document.getElementById("cup4").style.display='none';
-document.getElementById("cup5").style.display='none';
-document.getElementById("cup6").style.display='none';
-document.getElementById("cup7").style.display='none';
-document.getElementById("cup8").style.display='none';
-var x = document.getElementById("btnnext3");
-var delayinmiliseconds = 5000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-x.style.display="block";
+	document.getElementById("cup2").style.display='none';
+	document.getElementById("cup1").style.display='none';
+	document.getElementById("cup4").style.display='none';
+	document.getElementById("cup5").style.display='none';
+	document.getElementById("cup6").style.display='none';
+	document.getElementById("cup7").style.display='none';
+	document.getElementById("cup8").style.display='none';
+	
+	document.getElementById("cup3").style.animation="transitioncup3 5s";
+	document.getElementById("cup3").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = "";
+	
+	var x = document.getElementById("btnnext3");
+	var delayinmiliseconds = 5000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-},delayinmiliseconds);
+	x.style.display="block";
 
+	},delayinmiliseconds);
 }
+
 function ani4(){
-document.getElementById("cup4").style.animation="transitioncup4 5s";
-document.getElementById("cup4").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = "";
-document.getElementById("cup2").style.display='none';
-document.getElementById("cup3").style.display='none';
-document.getElementById("cup1").style.display='none';
-document.getElementById("cup5").style.display='none';
-document.getElementById("cup6").style.display='none';
-document.getElementById("cup7").style.display='none';
-document.getElementById("cup8").style.display='none';
-var x = document.getElementById("btnnext4");
-var delayinmiliseconds = 5000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-x.style.display="block";
+	document.getElementById("cup2").style.display='none';
+	document.getElementById("cup3").style.display='none';
+	document.getElementById("cup1").style.display='none';
+	document.getElementById("cup5").style.display='none';
+	document.getElementById("cup6").style.display='none';
+	document.getElementById("cup7").style.display='none';
+	document.getElementById("cup8").style.display='none';
+	
+	document.getElementById("cup4").style.animation="transitioncup4 5s";
+	document.getElementById("cup4").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = "";
+	
+	var x = document.getElementById("btnnext4");
+	var delayinmiliseconds = 5000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-},delayinmiliseconds);
+	x.style.display="block";
+
+	},delayinmiliseconds);
 }
+
 function ani5(){
-document.getElementById("cup5").style.animation="transitioncup5 5s";
-document.getElementById("cup5").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = "";
-document.getElementById("cup2").style.display='none';
-document.getElementById("cup3").style.display='none';
-document.getElementById("cup4").style.display='none';
-document.getElementById("cup1").style.display='none';
-document.getElementById("cup6").style.display='none';
-document.getElementById("cup7").style.display='none';
-document.getElementById("cup8").style.display='none';
-var x = document.getElementById("btnnext5");
-var delayinmiliseconds = 5000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-x.style.display="block";
+	document.getElementById("cup2").style.display='none';
+	document.getElementById("cup3").style.display='none';
+	document.getElementById("cup4").style.display='none';
+	document.getElementById("cup1").style.display='none';
+	document.getElementById("cup6").style.display='none';
+	document.getElementById("cup7").style.display='none';
+	document.getElementById("cup8").style.display='none';
+	
+	document.getElementById("cup5").style.animation="transitioncup5 5s";
+	document.getElementById("cup5").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = "";
+	
+	var x = document.getElementById("btnnext5");
+	var delayinmiliseconds = 5000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-},delayinmiliseconds);
+	x.style.display="block";
+
+	},delayinmiliseconds);
+
 }
 function ani6(){
-document.getElementById("cup6").style.animation="transitioncup6 5s";
-document.getElementById("cup6").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = "";
-document.getElementById("cup2").style.display='none';
-document.getElementById("cup3").style.display='none';
-document.getElementById("cup4").style.display='none';
-document.getElementById("cup5").style.display='none';
-document.getElementById("cup1").style.display='none';
-document.getElementById("cup7").style.display='none';
-document.getElementById("cup8").style.display='none';
-var x = document.getElementById("btnnext6");
-var delayinmiliseconds = 5000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-x.style.display="block";
+	document.getElementById("cup2").style.display='none';
+	document.getElementById("cup3").style.display='none';
+	document.getElementById("cup4").style.display='none';
+	document.getElementById("cup5").style.display='none';
+	document.getElementById("cup1").style.display='none';
+	document.getElementById("cup7").style.display='none';
+	document.getElementById("cup8").style.display='none';
+	
+	document.getElementById("cup6").style.animation="transitioncup6 5s";
+	document.getElementById("cup6").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = "";
+	
+	var x = document.getElementById("btnnext6");
+	var delayinmiliseconds = 5000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-},delayinmiliseconds);
+	x.style.display="block";
+
+	},delayinmiliseconds);
 }
+
 function ani7(){
-document.getElementById("cup7").style.animation="transitioncup7 5s";
-document.getElementById("cup7").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = "";
-document.getElementById("cup2").style.display='none';
-document.getElementById("cup3").style.display='none';
-document.getElementById("cup4").style.display='none';
-document.getElementById("cup5").style.display='none';
-document.getElementById("cup6").style.display='none';
-document.getElementById("cup1").style.display='none';
-document.getElementById("cup8").style.display='none';
-var x = document.getElementById("btnnext7");
-var delayinmiliseconds = 5000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-x.style.display="block";
+	document.getElementById("cup2").style.display='none';
+	document.getElementById("cup3").style.display='none';
+	document.getElementById("cup4").style.display='none';
+	document.getElementById("cup5").style.display='none';
+	document.getElementById("cup6").style.display='none';
+	document.getElementById("cup1").style.display='none';
+	document.getElementById("cup8").style.display='none';
+	
+	document.getElementById("cup7").style.animation="transitioncup7 5s";
+	document.getElementById("cup7").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = "";
+	
+	var x = document.getElementById("btnnext7");
+	var delayinmiliseconds = 5000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-},delayinmiliseconds);
+	x.style.display="block";
+
+	},delayinmiliseconds);
+
 }
 function ani8(){
-document.getElementById("cup8").style.animation="transitioncup8 5s";
-document.getElementById("cup8").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = "";
-document.getElementById("cup2").style.display='none';
-document.getElementById("cup3").style.display='none';
-document.getElementById("cup4").style.display='none';
-document.getElementById("cup5").style.display='none';
-document.getElementById("cup6").style.display='none';
-document.getElementById("cup7").style.display='none';
-document.getElementById("cup1").style.display='none';
-var x = document.getElementById("btnnext8");
-var delayinmiliseconds = 5000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-x.style.display="block";
+	document.getElementById("cup2").style.display='none';
+	document.getElementById("cup3").style.display='none';
+	document.getElementById("cup4").style.display='none';
+	document.getElementById("cup5").style.display='none';
+	document.getElementById("cup6").style.display='none';
+	document.getElementById("cup7").style.display='none';
+	document.getElementById("cup1").style.display='none';
+	
+	document.getElementById("cup8").style.animation="transitioncup8 5s";
+	document.getElementById("cup8").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = "";
+	
+	var x = document.getElementById("btnnext8");
+	var delayinmiliseconds = 5000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please do your supplication while making the water offering.";
 
-},delayinmiliseconds);
+	x.style.display="block";
+
+	},delayinmiliseconds);
 }//end of ani8
 
 function playanim(){
-document.getElementById("cup1").style.animation="transitionoutcup8 3s";
-document.getElementById("cup1").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = ""
-var x = document.getElementById("btnnext");
-x.style.display="none";
-var y = document.getElementById("btnnextpage");
-var delayinmiliseconds = 3000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
+	document.getElementById("cup1").style.animation="transitionoutcup1 3s";
+	document.getElementById("cup1").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = ""
+	var x = document.getElementById("btnnext");
+	x.style.display="none";
+	var y = document.getElementById("btnnextpage");
+	var delayinmiliseconds = 3000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
 
-x.style.display="none";
-y.style.display="block";
+	x.style.display="none";
+	y.style.display="block";
 
-},delayinmiliseconds);
+	},delayinmiliseconds);
 }
+
 function playanim2(){
-document.getElementById("cup2").style.animation="transitionoutcup8 3s";
-document.getElementById("cup2").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = ""
-var x = document.getElementById("btnnext2");
-x.style.display="none";
-var y = document.getElementById("btnnextpage");
-var delayinmiliseconds = 3000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
+	document.getElementById("cup2").style.animation="transitionoutcup2 3s";
+	document.getElementById("cup2").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = ""
+	var x = document.getElementById("btnnext2");
+	x.style.display="none";
+	var y = document.getElementById("btnnextpage");
+	var delayinmiliseconds = 3000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
 
-x.style.display="none";
-y.style.display="block";
+	x.style.display="none";
+	y.style.display="block";
 
-},delayinmiliseconds);
+	},delayinmiliseconds);
 }
+
 function playanim3(){
-document.getElementById("cup3").style.animation="transitionoutcup8 3s";
-document.getElementById("cup3").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = ""
-var x = document.getElementById("btnnext3");
-x.style.display="none";
-var y = document.getElementById("btnnextpage");
-var delayinmiliseconds = 3000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
+	document.getElementById("cup3").style.animation="transitionoutcup3 3s";
+	document.getElementById("cup3").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = ""
+	var x = document.getElementById("btnnext3");
+	x.style.display="none";
+	var y = document.getElementById("btnnextpage");
+	var delayinmiliseconds = 3000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
 
-x.style.display="none";
-y.style.display="block";
+	x.style.display="none";
+	y.style.display="block";
 
-},delayinmiliseconds);
+	},delayinmiliseconds);
 }
+
 function playanim4(){
-document.getElementById("cup4").style.animation="transitionoutcup8 3s";
-document.getElementById("cup4").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = ""
-var x = document.getElementById("btnnext4");
-x.style.display="none";
-var y = document.getElementById("btnnextpage");
-var delayinmiliseconds = 3000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
+	document.getElementById("cup4").style.animation="transitionoutcup4 3s";
+	document.getElementById("cup4").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = ""
+	var x = document.getElementById("btnnext4");
+	x.style.display="none";
+	var y = document.getElementById("btnnextpage");
+	var delayinmiliseconds = 3000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
 
-x.style.display="none";
-y.style.display="block";
+	x.style.display="none";
+	y.style.display="block";
 
-},delayinmiliseconds);
+	},delayinmiliseconds);
 }
+
 function playanim5(){
-document.getElementById("cup5").style.animation="transitionoutcup8 3s";
-document.getElementById("cup5").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = ""
-var x = document.getElementById("btnnext5");
-x.style.display="none";
-var y = document.getElementById("btnnextpage");
-var delayinmiliseconds = 3000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
+	document.getElementById("cup5").style.animation="transitionoutcup5 3s";
+	document.getElementById("cup5").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = ""
+	var x = document.getElementById("btnnext5");
+	x.style.display="none";
+	var y = document.getElementById("btnnextpage");
+	var delayinmiliseconds = 3000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
 
-x.style.display="none";
-y.style.display="block";
+	x.style.display="none";
+	y.style.display="block";
 
-},delayinmiliseconds);
+	},delayinmiliseconds);
 }
+
 function playanim6(){
-document.getElementById("cup6").style.animation="transitionoutcup8 3s";
-document.getElementById("cup6").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = ""
-var x = document.getElementById("btnnext6");
-x.style.display="none";
-var y = document.getElementById("btnnextpage");
-var delayinmiliseconds = 3000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
+	document.getElementById("cup6").style.animation="transitionoutcup6 3s";
+	document.getElementById("cup6").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = ""
+	var x = document.getElementById("btnnext6");
+	x.style.display="none";
+	var y = document.getElementById("btnnextpage");
+	var delayinmiliseconds = 3000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
 
-x.style.display="none";
-y.style.display="block";
+	x.style.display="none";
+	y.style.display="block";
 
-},delayinmiliseconds);
+	},delayinmiliseconds);
 }
+
 function playanim7(){
-document.getElementById("cup7").style.animation="transitionoutcup8 3s";
-document.getElementById("cup7").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = ""
-var x = document.getElementById("btnnext7");
-x.style.display="none";
-var y = document.getElementById("btnnextpage");
-var delayinmiliseconds = 3000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
+	document.getElementById("cup7").style.animation="transitionoutcup7 3s";
+	document.getElementById("cup7").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = ""
+	var x = document.getElementById("btnnext7");
+	x.style.display="none";
+	var y = document.getElementById("btnnextpage");
+	var delayinmiliseconds = 3000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
 
-x.style.display="none";
-y.style.display="block";
+	x.style.display="none";
+	y.style.display="block";
 
-},delayinmiliseconds);
+	},delayinmiliseconds);
 }
+
 function playanim8(){
-document.getElementById("cup8").style.animation="transitionoutcup8 3s";
-document.getElementById("cup8").style.animationFillMode="forwards";
-document.getElementById("instructions").innerHTML = ""
-var x = document.getElementById("btnnext8");
-x.style.display="none";
-var y = document.getElementById("btnnextpage");
-var delayinmiliseconds = 3000;
-setTimeout(function(){
-document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
+	document.getElementById("cup8").style.animation="transitionoutcup8 3s";
+	document.getElementById("cup8").style.animationFillMode="forwards";
+	document.getElementById("instructions").innerHTML = ""
+	var x = document.getElementById("btnnext8");
+	x.style.display="none";
+	var y = document.getElementById("btnnextpage");
+	var delayinmiliseconds = 3000;
+	setTimeout(function(){
+	document.getElementById("instructions").innerHTML = "Please pay homage to Buddha by taking 3 bows with palms folded.";
 
-x.style.display="none";
-y.style.display="block";
+	x.style.display="none";
+	y.style.display="block";
 
-},delayinmiliseconds);
+	},delayinmiliseconds);
 }
-
-
-
 </script>
+
 </head>
 <body>
-<header>
-</header>
 
-<div class="bg">
-<img id="cup1" src="Images/watercup.png" onclick ="ani()">
-<img id="cup2" src="Images/cup2.png" onclick ="ani2()">
-<img id="cup3" src="Images/cup3.png" onclick ="ani3()">
-<img id="cup4" src="Images/cup4.png" onclick ="ani4()">
-<img id="cup5" src="Images/watercup.png" onclick ="ani5()">
-<img id="cup6" src="Images/cup2.png" onclick ="ani6()">
-<img id="cup7" src="Images/cup3.png" onclick ="ani7()">
-<img id="cup8" src="Images/cup4.png" onclick ="ani8()">
 
-</div>
-<br><br><br><br><br><br><br>
+<div>
+	<img src="Images/altar3.jpg" alt="Snow" style="width:100%" >
+<div class="row">
+  <div class="column">
+    <img  id="cup1" src="Images/watercup.png" style="width:50%" onclick ="ani()">
+  </div>
+  <div class="column">
+    <img  id="cup2" src="Images/cup2.png"  style="width:50%" onclick ="ani2()">
+  </div>
+  <div class="column">
+    <img  id="cup3" src="Images/cup3.png"  style="width:50%" onclick ="ani3()">
+  </div>
+    <div class="column">
+    <img  id="cup4" src="Images/cup4.png" style="width:50%" onclick ="ani4()">
+  </div>
+<div class="row">
+  <div class="column">
+    <img  id="cup5" src="Images/watercup.png"  style="width:50%" onclick ="ani5()">
+  </div>
+  <div class="column">
+    <img  id="cup6" src="Images/cup2.png"  style="width:50%" onclick ="ani6()">
+  </div>
+  <div class="column">
+    <img  id="cup7" src="Images/cup3.png"  style="width:50%" onclick ="ani7()">
+  </div>
+    <div class="column">
+    <img  id="cup8" src="Images/cup4.png"  style="width:50%" onclick ="ani8()">
+  </div>
+  </div>
+  
+<div>
 <center>
 <p id="instructions">
 Please choose a cup of water by clicking on it.</p>
-
 </center>
+</div>
+
 <div id="buttonnext">
 <button id="btnnext" type = "button" style="float:center" onclick="playanim()">Next</button>
 <button id="btnnext2" type = "button" style="float:center" onclick="playanim2()">Next</button>
@@ -774,5 +759,7 @@ Please choose a cup of water by clicking on it.</p>
 <button id="btnnextpage" type = "button" style="float:center" onclick="window.location.href='WaterOffering3.html';">Next</button>
 
 </div>
+
+
 </body>
 </html>
