@@ -3,6 +3,8 @@
 <head>
 	<meta charset=“UTF-8”>
 	<title>Wheel of Fortune</title>
+	<link rel="stylesheet" href="alert.css">
+	<script src="alert.js"></script> 
 	<style>
 		button.link { background:none;border:none; }
 		*{
@@ -12,6 +14,7 @@
 			outline: none;
 		}
 		body{
+			margin:0 auto;
 			font-family= Open Sans;
 			display: flex;
 			justify-content: center;
@@ -44,56 +47,7 @@
 			border-radius: 50%;
 			border: 10px solid #FB143E;
 			overflow: hidden;
-			transition: all ease 5s;
-		}
-		span{
-			width: 50%;
-			height: 50%;
-			display: inline-block;
-			position: absolute;
-		}
-		.span1{
-			clip-path: polygon(0 92%, 100%  50%, 0 8%);
-			background-color: #749EB2;
-			top: 120px;
-			left: 0;
-		}
-		.span2{
-			clip-path: polygon(100% 92%, 0 50%, 100% 8%);
-			background-color: #BD8E83;
-			top: 120px;
-			right: 0;
-		}
-		.span3{
-			clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
-			background-color: #E9DAC4;
-			bottom: 0;
-			left: 120px;
-		}
-		.span4{
-			clip-path: polygon(50% 100%, 92% 0, 8% 0);
-			background-color: #AC8E60;
-			top: 0;
-			left: 120px;
-		}
-		.section2{
-			width: 100%;
-			height: 100%;
-			transform: rotate(-135deg);
-		}
-		span b{
-			width: 65px;
-			height: 65px;
-			line-height: 65px;
-			border-radius: 50%;
-			font-size: 26px;
-			text-align: center;
-			background-color: #FB143E;
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			box-shadow: inset 0 3px 3px 0 #717171;
+			transition: all ease 4.8s;
 		}
 		.spin{
 			position: absolute;
@@ -133,7 +87,7 @@
 	</style>
 </head>
 <body>
-		<b style="text-align: center;font-size:30px;color:#F5F5DC">Spin the<br>Wheel of Fortune<br>now!</b>
+		<b style="text-align: center;font-size:30px;color:#F5F5DC">Spin the<br>Wheel of<br>Fortune<br>now!</b>
 		<div id= 'mainRing' class=mainRing>
 			<div id='section' class=section>
 				<img src="WheelOut.png" style="width:490px;height:490px;">
@@ -141,11 +95,11 @@
 			<button class=spin onclick=wheelBrr();this.onclick=null;><img src="WheelButton.png" style="width:130px;height:130px;"/></button>
 		</div>
 		<b style="text-align: center;font-size:30px;color:#F5F5DC">马上<br>转转转<br>发发发吧!</b>
+
 <script>
-
 	function wheelBrr(){
-
-		var valueList = ["1 一","2 十五","2 十二","2 十一","2 十","2 九","2 八","2 七","2 六","2 五","2 三","2 二","2 一","1 十五","1 十二","1 十一","1 十","1 九","1 八","1 七","1 六","1 五","1 三","1 二"];
+		new Audio('Spin.wav').play();
+		var valueList = ["Auspicious Year of the Rat - 鼠年大吉 [1]","福慧双增 - Increasing Bliss & Wisdom [15]","金玉满堂 - Abundance of Wealth & Knowledge [12]","丰财聚宝 - Abundance of Wealth & Treasures [11]","五福临门 - Endowed with the 5 Blessings [10]","六时吉祥 - Blessings Round the Clock [9]","四季平安 - Peace & Auspicious In The 4 Seasons [8]","步步高升 - Rising Above All [7]","万事如意 - All Dreams Fulfilled [6]","幸福安康 - Bliss, Safety & Health [5]","花开富贵 - Blossoming Fortune [3]","合家欢乐 - Happy & Joyous Family [2]","Auspicious Year of the Rat - 鼠年大吉 [1]","福慧双增 - Increasing Bliss & Wisdom [15]","金玉满堂 - Abundance of Wealth & Knowledge [12]","丰财聚宝 - Abundance of Wealth & Treasures [11]","五福临门 - Endowed with the 5 Blessings [10]","六时吉祥 - Blessings Round the Clock [9]","四季平安 - Peace & Auspicious In The 4 Seasons [8]","步步高升 - Rising Above All [7]","万事如意 - All Dreams Fulfilled [6]","幸福安康 - Bliss, Safety & Health [5]","花开富贵 - Blossoming Fortune [3]","合家欢乐 - Happy & Joyous Family [2]"];
 		var Decided = Math.floor(Math.random() * valueList.length);
 		var Rotation = (Decided * 15) + Math.floor(Math.random(0,4) + 7190);
 		console.log(Rotation, Decided);
@@ -153,16 +107,21 @@
 
 		var element = document.getElementById('mainRing');
 
+
 		setTimeout(
 			function(){
 				console.log(Decided);
 				var getValue = valueList[Decided];
-				alert(getValue);
-				var win = window.open("Result.html", '_blank');
-				win.focus();
+				localStorage.setItem("Response", Decided);
+				alert("You got " + getValue);
+				//window.location.href = "Result.html";
+				//win.focus();
 			}, 
 			5000);
+		
 	}
 </script>
+
+
 </body>
 </html>

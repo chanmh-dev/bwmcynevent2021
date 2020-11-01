@@ -14,24 +14,312 @@
 			background: #FB143E;
 			background-size: cover;
 		}
+		.Clickables{
+			
+			color: #F5F5DC;
+			background: #FB143E;
+			border-radius: 8px;
+			padding: 10px 25px;
+			cursor: pointer;
+			font-size:25px;
+		}
+		.Clickables:hover{
+			background: #F5F5DC;
+			color: #FB143E;
+		}
 	</style>
 </head>
 <body>
 		<b style="text-align: center;font-size:30px;color:#F5F5DC">
-			Congratulations, you have gotten the following good fortune!<br>
-			恭喜，恭喜；您获得以下的好运！<br><br>
+		<h2 style="text-align: center;font-size:30px;color:#F5F5DC" id="Line1"></h2>
+		
+		<h2 style="text-align: center;font-size:30px;color:#F5F5DC" id="Line2"></h2>
+		<br>
+		<h2 style="text-align: center;font-size:30px;color:#F5F5DC" id="Line3"></h2>
+		<br>
+		<h2 style="text-align: center;font-size:30px;color:#F5F5DC" id="Line4"></h2>
+		
+		<h2 style="text-align: center;font-size:30px;color:#F5F5DC" id="Line5"></h2>
+		<br>
+		<h2 style="text-align: center;font-size:30px;color:#F5F5DC" id="Line6"></h2>
+		
+		<h2 style="text-align: center;font-size:30px;color:#F5F5DC" id="Line7"></h2>
+		<br>
 
-			1.	 Auspicious Year of the Rat - 鼠年大吉<br><br>
-
-			Golden Tips: <br>
-			Engage in acts of paying respect and making offerings to Buddha, giving, life liberation, reciting sutras, respecting elderly, etc.<br><br>
-
-			黄金贴士：<br>
-			礼佛、供佛 、布施、放生、诵经、说好话、敬老尊贤等<br><br>
-
-		<button name="btnnext" type = "button" style="left:50%;" onclick="window.location.href='FortuneWheel.html';"><b>TRY AGAIN 再试一次</b></button>
+		<div>
+		<button class= "Clickables" name="Retry" type = "button" style="float:left" onclick="window.location.href='FortuneWheel.html';"><b>TRY AGAIN 再试一次</b></button>
+		</div>
+		<div>
+		<button class= "Clickables" name="Donate" type = "button" style="float:right" onclick="location.href='https://bwmonastery.org.sg/online-donation';"><b>Support BW Monastery!</b></button>
+		</div>
 		</b>
 <script>
+		var Readout= localStorage.getItem("Response");
+		console.log(Readout);
+		if (Readout == 0 || Readout == 12){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"1.	Auspicious Year of the Rat - 鼠年大吉";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Engage in acts of paying respect and making offerings to Buddha, giving, life liberation, reciting sutras, respecting elderly, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"礼佛、供佛 、布施、放生、诵经、说好话、敬老尊贤等";
+		}
+		if (Readout == 1 || Readout == 13){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"15.	福慧双增 - Increasing Bliss & Wisdom";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Pay respect to Buddha, make offerings to Buddha, make light offerings to Buddha, engage in life liberations, be grateful, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"礼佛、供佛、供灯、放生、存感恩心等";
+		}
+		if (Readout == 2 || Readout == 14){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"12.	金玉满堂 - Abundance of Wealth & Knowledge";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Engage in acts of making offerings to the Triple Gem, make light offerings to Buddha, supplicate for blessings, practise giving, respect parents and seniors, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"供养三宝、供灯、祈福、行布施、孝顺父母尊长等";
+		}
+		if (Readout == 3 || Readout == 15){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"11.	丰财聚宝 - Abundance of Wealth & Treasures";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Make offerings to the Triple Gem, practise giving and engage in kind acts, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"多供养三宝、多布施、多做善行等";
+		}
+		if (Readout == 4 || Readout == 16){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"10.	五福临门 - Endowed with the 5 Blessings";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Supplicate to Buddha, engage in acts of protecting lives, practise giving, engage in good deeds, be kind with words, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"祈求佛菩萨、爱护生命、行布施、行善、多说好话等";
+		}
+		if (Readout == 5 || Readout == 17){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"9.	六时吉祥 - Blessings Round the Clock";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Engage in acts of reciting sutras, protecting lives, be kind with words, practise giving, respecting elderly, be contented with what one owns and be grateful, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"诵经、爱护生命、说好话、行布施、敬老尊贤、知足感恩等";
+		}
+		if (Readout == 6 || Readout == 18){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"8.	四季平安 - Peace & Auspicious In The 4 Seasons";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Be respectful towards elderly and others, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"敬老尊贤、尊重他人等";
+		}
+		if (Readout == 7 || Readout == 19){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"7.	步步高升 - Rising Above All";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Engage in kind acts, be filial to one’s parents, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"行善、孝敬父母等";
+		}
+		if (Readout == 8 || Readout == 20){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"6.	万事如意 - All Dreams Fulfilled";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Engage in acts of making offerings to the Triple Gem, practise at least one kind act daily, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"供养三宝、每日行一善等";
+		}
+		if (Readout == 9 || Readout == 21){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"5.	幸福安康 - Bliss, Safety & Health";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Respect one’s parents, engage in acts of protecting lives, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"孝敬父母、爱护生命等";
+		}
+		if (Readout == 10 || Readout == 22){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"3.	花开富贵 - Blossoming Fortune";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Engage in acts of making offerings to the Triple Gem, make flowers and water offerings to Buddha, practise giving and helping others, protect lives, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"供养三宝、供花、供水、多布施行善、爱护生命等";
+		}
+		if (Readout == 11 || Readout == 23){
+			document.getElementById("Line1").innerHTML =
+			"Congratulations, you have gotten the following good fortune!";
+
+			document.getElementById("Line2").innerHTML =
+			"恭喜，恭喜；您获得以下的好运!";
+
+			document.getElementById("Line3").innerHTML =
+			"2.	合家欢乐 - Happy & Joyous Family";
+
+			document.getElementById("Line4").innerHTML =
+			"Golden Tips:";
+
+			document.getElementById("Line5").innerHTML =
+			"Engage in acts of protecting lives, be kind with words, observe merits and appreciate kindness of others, be respectful to elders, etc.";
+
+			document.getElementById("Line6").innerHTML =
+			"黄金贴士：";
+
+			document.getElementById("Line7").innerHTML =
+			"爱护生命、说好话、观功念恩、恭敬长辈等";
+		}
 </script>
 </body>
 </html>

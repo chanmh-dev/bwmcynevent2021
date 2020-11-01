@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Wheel of Fortune</title>
+	<style>
+		body{
+			font-family= Open Sans;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			overflow: hidden;
+			background: #FB143E;
+			background-size: cover;
+		}
+		.Clickables{
+			
+			color: #F5F5DC;
+			background: #FB143E;
+			border-radius: 8px;
+			padding: 5px 12px;
+			cursor: pointer;
+		}
+		.Clickables:hover{
+			background: #F5F5DC;
+			color: #FB143E;
+		}
+	</style>
+</head>
+<body>
+		<b style="text-align: center;font-size:30px;color:#F5F5DC">
+			Congratulations, you have gotten the following good fortune!<br>
+			恭喜，恭喜；您获得以下的好运！<br><br>
+
+			1.	 Auspicious Year of the Rat - 鼠年大吉<br><br>
+
+			Golden Tips: <br>
+			Engage in acts of paying respect and making offerings to Buddha, giving, life liberation, reciting sutras, respecting elderly, etc.<br><br>
+
+			黄金贴士：<br>
+			礼佛、供佛 、布施、放生、诵经、说好话、敬老尊贤等<br><br>
+		<div>
+		<button class= "Clickables" name="Retry" type = "button" style="float:left" onclick="window.location.href='FortuneWheel.html';"><b>TRY AGAIN 再试一次</b></button>
+		</div>
+		<div>
+		<button class= "Clickables" name="Donate" type = "button" style="float:right" onclick="location.href='https://bwmonastery.org.sg/?gclid=CjwKCAjwlbr8BRA0EiwAnt4MTmGr135Ob6of8jk3UcKieGOdZWZe2qPCVp6OCT-fqEsS4DJhl6oHoRoCID8QAvD_BwE';"><b>Support BW Monastery!</b></button>
+		</div>
+		</b>
+<script>
+		var Readout=localStorage.getItem("Response");
+		console.log(Readout);
+</script>
+</body>
+</html>

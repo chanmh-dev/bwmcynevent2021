@@ -26,19 +26,54 @@ After WheelOut.png's img.
 					<span class=span3><b>三</b></span>
 					<span class=span4><b>四</b></span>
 				</div>
-Bottom of Script
+Below .section
 
-	var locked = false;
-
-	function alertStatus () {
-		if (!locked) {
-			locked = true;
-			setTimeout(unlock, 1000);
-			$('#doneStatus').hide();
-			$('#loadingStatus').show();
+		span{
+			width: 50%;
+			height: 50%;
+			display: inline-block;
+			position: absolute;
 		}
-	}
-
-	function unlock () {
-		locked = false;
-	}
+		.span1{
+			clip-path: polygon(0 92%, 100%  50%, 0 8%);
+			background-color: #749EB2;
+			top: 120px;
+			left: 0;
+		}
+		.span2{
+			clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+			background-color: #BD8E83;
+			top: 120px;
+			right: 0;
+		}
+		.span3{
+			clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+			background-color: #E9DAC4;
+			bottom: 0;
+			left: 120px;
+		}
+		.span4{
+			clip-path: polygon(50% 100%, 92% 0, 8% 0);
+			background-color: #AC8E60;
+			top: 0;
+			left: 120px;
+		}
+		.section2{
+			width: 100%;
+			height: 100%;
+			transform: rotate(-135deg);
+		}
+		span b{
+			width: 65px;
+			height: 65px;
+			line-height: 65px;
+			border-radius: 50%;
+			font-size: 26px;
+			text-align: center;
+			background-color: #FB143E;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			box-shadow: inset 0 3px 3px 0 #717171;
+		}
