@@ -298,6 +298,7 @@ img {
 	  }
 	  
 	  if (height >= 668 && height <= 720){
+	  document.getElementById("imgBanner").style.maxWidth = "430px";
 		y_limit = 420;
 	  }
 	  
@@ -321,9 +322,12 @@ img {
 		y_limit = 350;
 	  }
 	  
+	  if (height >= 1024 && height <= 1365){
+		document.getElementById("imgBanner").style.maxWidth = "600px";
+	  }
 	  
 	  if (height >= 1366){
-		document.getElementById("imgBanner").style.maxWidth = "800px";
+		document.getElementById("imgBanner").style.maxWidth = "790px";
 	  }
 	  
 	  if (width <= 576) return 'xs'
