@@ -1,106 +1,110 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
+  <head>
 <head>
-  <meta name="viewport" 
-        content="width=device-width, 
-        initial-scale=1.0, 
-        user-scalable=no" />
-  <title>Drag/Drop/Bounce</title>
-  <style>
-    #container {
-	  position: relative;
-      width: 100%;
-      height: 800px;
-      //background-color: #666;
-	  //background-image: url("./sky.jpg");
-	  background: 
-	     url(./GuanYin.jpg) no-repeat  top center,
-		 url(./sky.jpg)  no-repeat center;  
-	  //background-repeat: no-repeat;
-	  //background-size: cover;
-	  background-size: contain;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: scroll;
-	  -webkit-overflow-scrolling: touch;
-      border-radius: 7px;
-      touch-action: none;
-    }
-	
-	.qian{
-		//width: 300px;
-		//height: 300px;
-		max-width: 200px;
-		height: auto;
-		position: absolute;
-		left: 145px;
-		top:350px;
-		display: none;
-    }	
-	
-	
-	#qian1{
-		z-index: 1;
-    }		
-		
-	
-	#qian7{
-		z-index: 7;
-    }		
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-	
-	#item {
-	  //width: 552px;
-      //height: 584px;
-	  max-width: 452px;
-      height: auto;
-	  position: absolute;
-	  top: 300px;
-	  left: 100px;
-	  z-index: 90;
-	  //display: none;
+
+<style>
+.imageBanner {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width:100%;
+    max-width: 512px;
+}
+
+#item {
+  width: 50%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 60%;
+   z-index: 3;
+}
+
+.imageCentre {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+}
+
+.qian {
+  width: 30%;
+  display: none;
+  position: absolute;
+  left: 11%;
+  //top: 550px;
+  top: 65%;
+  z-index:2;
+  -webkit-animation: floatQian 4s;
+  animation: floatQian 4s;
+  animation-fill-mode: forwards; 
+}
+
+
+@-webkit-keyframes floatQian {
+    0% {
+        top:65%;
     }
-	
-	//@media screen and (max-width: 767px){   
-		//#item{      
-			//content:url("./qtong-small.png");
-		//} 
-	//}
-	
-	
-  </style>
+    100% {
+        top: 50%;
+    }
+}
+@keyframes floatQian {
+    0% {
+        top:65%;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+
+img {
+    width: 100%;
+}
+
+</style>
+
 </head>
-
 <body>
-<!--
-	<input type=button onClick=start() value='Start'>
-	<input type=button onClick=reset1() value='Reset'>
-	<div id='msg' style="height:300px;width:300px;"></div>
--->	
-  <div id="outerContainer">
-    <div id="container">
-		<img src="./qtong-small.png"  id="item">
-		<img src="./qian1.png"  id="qian1" class="qian">
-		<img src="./qian2.png"  id="qian2" class="qian">
-		<img src="./qian3.png"  id="qian3" class="qian">
-		<img src="./qian4.png"  id="qian4" class="qian">
-		<img src="./qian5.png"  id="qian5" class="qian">
-		<img src="./qian6.png"  id="qian6" class="qian">
-		<img src="./qian7.png"  id="qian7" class="qian">
-		<img src="./qian8.png"  id="qian8" class="qian">
-		<img src="./qian9.png"  id="qian9" class="qian">
-		<img src="./qian10.png"  id="qian10" class="qian">
-    </div>
-  </div>
 
-  <script>
+<div class="imageBanner">
+   <div class="imageLeft">
+	  <img src="qtong-small.png" id="item">
+   </div>
+   <div class="imageCentre">
+	  <img src="GuanYin.jpg">
+   </div>
+   <div class="qian-container" >
+	  <img src="qian1.png" id="qian1" class="qian">
+	  <img src="qian2.png" id="qian2" class="qian">
+	  <img src="qian3.png" id="qian3" class="qian">
+	  <img src="qian4.png" id="qian4" class="qian">
+	  <img src="qian5.png" id="qian5" class="qian">
+	  <img src="qian6.png" id="qian6" class="qian">
+	  <img src="qian7.png" id="qian7" class="qian">
+	  <img src="qian8.png" id="qian8" class="qian">
+	  <img src="qian9.png" id="qian9" class="qian">
+	  <img src="qian10.png" id="qian10" class="qian">
+   </div>
+</div>
+
+<script>
     var random_num = Math.floor((Math.random() * 10) + 1);
 	var qian = "qian";	
 	var qianChosen  = "";	
     var dragItem = document.querySelector("#item");
-    var container = document.querySelector("#container");
+    //var container = document.querySelector("#container");
 
     var active = false;
     var currentX;
@@ -109,6 +113,13 @@
     var initialY;
     var xOffset = 0;
     var yOffset = 0;
+	var y_limit = 450;
+	
+	var env = findBootstrapEnvironment();
+	if (env === "xs"){
+		y_limit = 310;
+	}
+	
 
     item.addEventListener("touchstart", dragStart, false);
     item.addEventListener("touchend", dragEnd, false);
@@ -117,6 +128,9 @@
     item.addEventListener("mousedown", dragStart, false);
     item.addEventListener("mouseup", dragEnd, false);
     item.addEventListener("mousemove", drag, false);
+	
+	console.log(findBootstrapEnvironment());
+	console.log(getViewport());
 
     function dragStart(e) {
 	 console.log("touchstart")
@@ -137,7 +151,7 @@
 
     function dragEnd(e) {
 	  random_num = Math.floor((Math.random() * 10) + 1);
-	  document.getElementById(qian+random_num).style.display = "inline";
+	  document.getElementById(qian+random_num).style.display = "block";
       initialX = 0;//currentX;
       initialY = 0;//currentY;
 	  
@@ -147,7 +161,7 @@
 	  setTranslate(0, 0, dragItem);
 
       active = false;
-	  timer();
+	 // timer();
 	  console.log("drag ends")
 	  console.log("x", currentX)
 	  console.log("y", currentY)
@@ -178,62 +192,141 @@
     }
 	
 	//////////////////////
-function start(){
-	document.getElementById(qian+random_num).style.display = "none";
-	random_num = Math.floor((Math.random() * 10) + 1);
-	document.getElementById(qian+random_num).style.display = "inline";
-	timer();
-}	
-	
-function reset1(){
-
-console.log("reset");
-if (typeof my_time !== 'undefined'){
-	clearTimeout(my_time);
-}
-
-console.log(qianChosen);
-qianChosen = qian + random_num;
-console.log(qianChosen);
-console.log("random number",  random_num);
-document.getElementById(qianChosen).style.left= "145px";
-document.getElementById(qianChosen).style.top= "350px";
-var y=document.getElementById(qianChosen).offsetTop;
-var x=document.getElementById(qianChosen).offsetLeft;
-//document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
-
-}
-
-function disp(){
-	var step=1; // Change this step value
-
-	var y=document.getElementById(qian+random_num).offsetTop ;
-	var x=document.getElementById(qian+random_num).offsetLeft;
-	//console.log('y_disp', y);
-
-	if(y >= 180 ){
-		dir = 'up';
-		y = y - step;
-		//console.log('y1', y);
+	function start(){
+		document.getElementById(qian+random_num).style.display = "none";
+		random_num = Math.floor((Math.random() * 10) + 1);
+		document.getElementById(qian+random_num).style.display = "inline";
+		timer();
+	}	
 		
-		document.getElementById(qian+random_num).style.top= y + "px"; // vertical movment
+	function reset1(){
+
+	console.log("reset");
+	if (typeof my_time !== 'undefined'){
+		clearTimeout(my_time);
 	}
 
+	console.log(qianChosen);
+	qianChosen = qian + random_num;
+	console.log(qianChosen);
+	console.log("random number",  random_num);
+	document.getElementById(qianChosen).style.left= "11%";
+	document.getElementById(qianChosen).style.top= "65%";
+	var y=document.getElementById(qianChosen).offsetTop;
+	var x=document.getElementById(qianChosen).offsetLeft;
+	//document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
 
-}
-
-function timer(){
-	disp();
-	var y=document.getElementById(qian+random_num).offsetTop ;
-	var x=document.getElementById(qian+random_num).offsetLeft;
-	//console.log('x', x);
-	//console.log('y_timer', y);
-	//document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y;
-	my_time=setTimeout('timer()',10);
-}
+	}
 	
-	//////////////////////
-  </script>
-</body>
+	function disp(){
+		var step=1; // Change this step value
 
+		var y=document.getElementById(qian+random_num).offsetTop ;
+		var x=document.getElementById(qian+random_num).offsetLeft;
+		//console.log('y_disp', y);
+        console.log(y_limit);
+		if(y >= y_limit ){
+			dir = 'up';
+			y = y - step;
+			//console.log('y1', y);
+			
+			document.getElementById(qian+random_num).style.top= y + "px"; // vertical movment
+		}
+	}
+	
+	function timer(){
+		disp();
+		var y=document.getElementById(qian+random_num).offsetTop ;
+		var x=document.getElementById(qian+random_num).offsetLeft;
+		//console.log('x', x);
+		//console.log('y_timer', y);
+		//document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y;
+		
+		my_time=setTimeout('timer()',10);
+	}
+	
+	function findBootstrapEnvironment() {
+		let envs = ['xs', 'sm', 'md', 'lg', 'xl'];
+
+		let el = document.createElement('div');
+		document.body.appendChild(el);
+
+		let curEnv = envs.shift();
+
+		for (let env of envs.reverse()) {
+			el.classList.add(`d-${env}-none`);
+
+			if (window.getComputedStyle(el).display === 'none') {
+				curEnv = env;
+				break;
+			}
+		}
+
+		document.body.removeChild(el);
+		return curEnv;
+	}
+	
+	function getViewport () {
+	  // https://stackoverflow.com/a/8876069
+	  const width = Math.max(
+		document.documentElement.clientWidth,
+		window.innerWidth || 0
+	  )
+	  
+	  const height = Math.max(
+		document.documentElement.clientHeight,
+		window.innerHeight || 0
+	  )
+	  console.log(height);
+	  
+	  if (height <= 568){
+		y_limit = 270;
+	  }
+	  
+	  if (height >= 569 && height <= 640){
+		y_limit = 290;
+	  }
+	  
+	  if (height >= 641 && height <= 653){
+		y_limit = 240;
+	  }
+	  
+	  if (height >= 654 && height <= 667){
+		y_limit = 320;
+	  }
+	  
+	  if (height >= 668 && height <= 720){
+		y_limit = 420;
+	  }
+	  
+	  if (height >= 721 && height <= 731){
+		y_limit = 350;
+	  }
+	  
+	  if (height >= 732 && height <= 736){
+		y_limit = 355;
+	  }	
+	  
+	  if (height >= 737 && height <= 757){
+		y_limit = 415;
+	  }	
+	  
+	  if (height >= 758 && height <= 812){
+		y_limit = 310;
+	  }	  
+	  
+	  if (height >= 813 && height <= 823){
+		y_limit = 350;
+	  }
+	  
+	  if (width <= 576) return 'xs'
+	  if (width <= 768) return 'sm'
+	  if (width <= 992) return 'md'
+	  if (width <= 1200) return 'lg'
+	  return 'xl'
+	}
+
+</script>
+
+</body>
 </html>
