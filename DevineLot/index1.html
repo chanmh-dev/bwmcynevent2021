@@ -12,16 +12,20 @@
 
 
 <style>
+body{
+	background-color: powderblue;
+}
+
 .imageBanner {
     display: block;
     position: relative;
     margin: 0 auto;
     width:100%;
-    max-width: 512px;
+    max-width: 600px;
 }
 
 #item {
-  width: 50%;
+  width: 70%;
   display: block;
   position: absolute;
   left: 0;
@@ -38,10 +42,10 @@
 }
 
 .qian {
-  width: 30%;
+  width: 55%;
   display: none;
   position: absolute;
-  left: 11%;
+  left: 8%;
   //top: 550px;
   top: 65%;
   z-index:2;
@@ -210,7 +214,7 @@ img {
 	qianChosen = qian + random_num;
 	console.log(qianChosen);
 	console.log("random number",  random_num);
-	document.getElementById(qianChosen).style.left= "11%";
+	document.getElementById(qianChosen).style.left= "8%";
 	document.getElementById(qianChosen).style.top= "65%";
 	var y=document.getElementById(qianChosen).offsetTop;
 	var x=document.getElementById(qianChosen).offsetLeft;
