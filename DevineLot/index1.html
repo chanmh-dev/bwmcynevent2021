@@ -9,7 +9,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>	
 
 <style>
 body{
@@ -78,12 +81,43 @@ img {
     width: 100%;
 }
 
+#lot_btn {
+  position: absolute;
+  display: none;
+  z-index:99;
+  top: 90%;
+  left: 68%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 10px 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.counter-box{
+  position: absolute;
+  font-size: 250%;  
+  color: white;
+  top: 8px;
+  left: 16px;
+  z-index:99;
+}
+
 </style>
 
 </head>
 <body>
 
-<div class="imageBanner" id="imgBanner">
+<div class="imageBanner" id="imgBanner" >
+	<div class="counter-box"> <span class="counter" id="counterValue">0</span>
+		<h5>求签数据</h5>
+	</div>
+	<button class="btn" id="lot_btn">Lot number explanation<br/>解签</button>
    <div class="imageLeft">
 	  <img src="qtong-small.png" id="item">
    </div>
@@ -201,6 +235,7 @@ img {
 	  <img src="./assets/img/qian/qian99.png" id="qian99" class="qian">
 	  <img src="./assets/img/qian/qian100.png" id="qian100" class="qian">	  
    </div>
+      
 </div>
 
 <script>
@@ -233,9 +268,16 @@ img {
 	console.log(findBootstrapEnvironment());
 	console.log(getViewport());
 
+	document.getElementById("lot_btn").onclick = function() {
+		console.log("explain");
+		sessionStorage.setItem("number", random_num);
+		window.location.href = "./lot.html";			
+	}
+
     function dragStart(e) {
 	 console.log("touchstart")
 	 document.getElementById(qian+random_num).style.display = "none";
+	 document.getElementById("lot_btn").style.display = "none";
 	  reset1();
       if (e.type === "touchstart") {
         initialX = e.touches[0].clientX - xOffset;
@@ -252,6 +294,7 @@ img {
 
     function dragEnd(e) {
 	  random_num = Math.floor((Math.random() * 100) + 1);
+	  document.getElementById("lot_btn").style.display = "block";
 	  document.getElementById(qian+random_num).style.display = "block";
       initialX = 0;//currentX;
       initialY = 0;//currentY;
@@ -266,6 +309,8 @@ img {
 	  console.log("drag ends")
 	  console.log("x", currentX)
 	  console.log("y", currentY)
+	  
+	  runHitCounter();
     }
 
     function drag(e) {
@@ -294,6 +339,7 @@ img {
 	
 	//////////////////////
 	function start(){
+	    document.getElementById("lot_btn").style.display = "block";
 		document.getElementById(qian+random_num).style.display = "none";
 		random_num = Math.floor((Math.random() * 100) + 1);
 		document.getElementById(qian+random_num).style.display = "inline";
@@ -435,7 +481,155 @@ img {
 	  if (width <= 1200) return 'lg'
 	  return 'xl'
 	}
+	
+	function runHitCounter(){
+		if (location.hostname.toLowerCase() == ""){
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+			apiKey: "AIzaSyDYCHz8eLeA5QX5BDXvLmwyRAcXnahNOuU",
+			authDomain: "hitcounter-4ecc7.firebaseapp.com",
+			databaseURL: "https://hitcounter-4ecc7.firebaseio.com",
+			projectId: "hitcounter-4ecc7",
+			storageBucket: "hitcounter-4ecc7.appspot.com",
+			messagingSenderId: "1032542240110",
+			appId: "1:1032542240110:web:1ce39ce0065cd699b4957f"
+		  };
+		  // Initialize Firebase
+		  //firebase.initializeApp(firebaseConfig);
+		  
+			 //rootRef is a reference to the whole Firebase database.
+			const rootRef = firebase.database().ref();
+			// pageCountRef is just the node that tracks hits
+			const pageCountsRef = rootRef.child("pageCounts");
+			
+			//Gets the key and current hit count for the page (if it exists)
+			let getHistory = new Promise(function (resolve, reject) {
+			  //Create an object to store copy of the saved db data.
+			  let obj = {};
+			  pageCountsRef.orderByChild("page").equalTo(location.pathname).once("value", function (snapshot) {
+				snapshot.forEach(function (child) {
+				  obj = {
+					key: child.key,
+					count: child.val().count
+				  }
+				});
+				if (obj) {
+				  resolve(obj);
+				} else {
+				  reject(error);
+				}
+			  });
+			});
+			//When getHistory promise resoves, the key is either undefined (page not in the database),
+			//Or key is a string that uniquely identifies the page in the database.
+			getHistory.then(function (fromResolve) {
+			  var key = fromResolve.key;
+			  var pastcounts = fromResolve.count;
+			  //If key is undefined, create a new key for this database item.
+			  if (key == undefined) {
+				key = pageCountsRef.push().key;
+				pastcounts = 0;
+			  }
+			  //Total hits to date.
+			  counts = pastcounts + 1;
+			  console.log("counts", counts);
 
+			  $(".counter").text(counts.toString());
+			  //Gather info to post
+			  var postData = {
+				page: location.pathname,
+				count: counts,
+				lastvisit: firebase.database.ServerValue.TIMESTAMP,
+				lastreferrer: document.referrer
+			  }
+
+			  var updates = {}
+			  updates["/pageCounts/" + key] = postData;
+			  rootRef.update(updates);
+			}).catch(function (fromReject) {
+			  console.log(error);
+			})
+		}
+	}	
+
+</script>
+
+
+<script>
+	
+	function getHitCounter(){
+		if (location.hostname.toLowerCase() == ""){
+		  // Your web app's Firebase configuration
+		  var firebaseConfig = {
+			apiKey: "AIzaSyDYCHz8eLeA5QX5BDXvLmwyRAcXnahNOuU",
+			authDomain: "hitcounter-4ecc7.firebaseapp.com",
+			databaseURL: "https://hitcounter-4ecc7.firebaseio.com",
+			projectId: "hitcounter-4ecc7",
+			storageBucket: "hitcounter-4ecc7.appspot.com",
+			messagingSenderId: "1032542240110",
+			appId: "1:1032542240110:web:1ce39ce0065cd699b4957f"
+		  };
+		  // Initialize Firebase
+		  firebase.initializeApp(firebaseConfig);
+		  
+			 //rootRef is a reference to the whole Firebase database.
+			const rootRef = firebase.database().ref();
+			// pageCountRef is just the node that tracks hits
+			const pageCountsRef = rootRef.child("pageCounts");
+			
+			//Gets the key and current hit count for the page (if it exists)
+			let getHistory = new Promise(function (resolve, reject) {
+			  //Create an object to store copy of the saved db data.
+			  let obj = {};
+			  pageCountsRef.orderByChild("page").equalTo(location.pathname).once("value", function (snapshot) {
+				snapshot.forEach(function (child) {
+				  obj = {
+					key: child.key,
+					count: child.val().count
+				  }
+				});
+				if (obj) {
+				  resolve(obj);
+				} else {
+				  reject(error);
+				}
+			  });
+			});
+			//When getHistory promise resoves, the key is either undefined (page not in the database),
+			//Or key is a string that uniquely identifies the page in the database.
+			getHistory.then(function (fromResolve) {
+			  var key = fromResolve.key;
+			  var pastcounts = fromResolve.count;
+			  //If key is undefined, create a new key for this database item.
+			  if (key == undefined) {
+				key = pageCountsRef.push().key;
+				pastcounts = 0;
+			  }
+			  //Total hits to date.
+			  console.log("hit counts", pastcounts);
+			  
+			$(".counter").text(pastcounts.toString());
+			$('.counter').each(function () {
+			$(this).prop('Counter',0).animate({
+			Counter: $(this).text()
+			}, {
+					duration: 4000,
+					easing: 'swing',
+					step: function (now) {
+					$(this).text(Math.ceil(now));
+					}
+				});
+			});			  
+
+			}).catch(function (fromReject) {
+			  console.log(error);
+			})
+		}
+	}	
+
+	$(document).ready(function() {
+	    getHitCounter();
+	});
 </script>
 
 </body>

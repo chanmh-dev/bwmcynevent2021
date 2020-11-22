@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<style>
+body{
+	background-color: powderblue;
+}
+
+#notification {
+    position:fixed;
+    top:0px; /* Set to 0 or wherever */
+    width:100%; /* set to 100% if space is available */
+    z-index:105;
+    text-align:center;
+    font-weight:normal;
+    font-size:14px;
+    font-weight:bold;
+    color:white;
+    background-color:#FF7800;
+    padding:5px;
+}
+
+#notification span.dismiss {
+    border:2px solid #FFF;
+    padding:0 5px;
+    cursor:pointer;
+    float:right;
+    margin-right:10px;
+}
+
+#notification a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold
+}
+
+#notificationC {
+    position:fixed;
+    top:35px; /* Set to 0 or wherever */
+    width:100%; /* set to 100% if space is available */
+    z-index:105;
+    text-align:center;
+    font-weight:normal;
+    font-size:14px;
+    font-weight:bold;
+    color:white;
+    background-color:#FF7800;
+    padding:5px;
+}
+
+#notificationC span.dismiss {
+    border:2px solid #FFF;
+    padding:0 5px;
+    cursor:pointer;
+    float:right;
+    margin-right:10px;
+}
+
+#notificationC a {
+    color:white;
+    text-decoration:none;
+    font-weight:bold
+}
+
+</style>
+
+</head>
+<body>
+		<div id="notification" style="display: none;">
+			<span class="dismiss"><a title="dismiss this notification">X</a></span>
+		</div>
+	<div class="container">
+	<!--
+	   <div class="row">
+			<button type="button" id="btn1">Show</button>
+			<button type="button" id="btn2">Hide</button>
+		</div>
+	-->
+		<div class="row">	
+			<div class="col" id="imgDiv">
+				<img src="./assets/img/lot/lotC1.jpg" class="img-fluid" id="lotCImg">
+				<img src="./assets/img/lot/lotE1.jpg" class="img-fluid" id="lotEImg">
+			</div>
+		</div>
+	</div>
+
+<script>
+var number = sessionStorage.getItem("number");
+console.log(number);
+
+var lotC =  "./assets/img/lot/lotC" + number + ".jpg";
+console.log(lotC);
+var lotE = "./assets/img/lot/lotE" + number + ".jpg";
+console.log(lotE);
+
+document.getElementById("lotCImg").setAttribute('src', lotC);
+document.getElementById("lotEImg").setAttribute('src', lotE);
+
+var message = "If you need assistance for the explanation, please join the zoom session (Zoom ID 93847123) on Feb 12 10am - 12pm \n如果您需要解签协助，请在二月十二日 10am - 12pm 上线 (Zoom ID 93847123)";
+
+$("#notification").fadeIn("slow").append(message);
+$(".dismiss").click(function(){
+       $("#notification").fadeOut("slow");
+});
+
+$("#notificationC").fadeIn("slow").append("如果您需要解签协助，请在二月十二日上线 (Zoom ID 93847123)");
+$(".dismiss").click(function(){
+       $("#notificationC").fadeOut("slow");
+});
+/*
+$(document).ready(function(){
+	$('#btn1').click(function(){
+   		$('#imgDiv').show();
+	});
+  	$('#btn2').click(function(){
+   		$('#imgDiv').hide();
+	});
+});
+*/
+</script>
+
+</body>
+</html>
