@@ -26,7 +26,8 @@ body{
     font-size:14px;
     font-weight:bold;
     color:white;
-    background-color:#FF7800;
+    //background-color:#FF7800;
+	background-color:blue;
     padding:5px;
 }
 
@@ -35,7 +36,8 @@ body{
     padding:0 5px;
     cursor:pointer;
     float:right;
-    margin-right:10px;
+    margin-right:5px;
+    background-color:red;
 }
 
 #notification a {
@@ -44,48 +46,51 @@ body{
     font-weight:bold
 }
 
-#notificationC {
-    position:fixed;
-    top:35px; /* Set to 0 or wherever */
-    width:100%; /* set to 100% if space is available */
-    z-index:105;
-    text-align:center;
-    font-weight:normal;
-    font-size:14px;
-    font-weight:bold;
-    color:white;
-    background-color:#FF7800;
-    padding:5px;
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 325px;
+  height: 160px;  
+  background: #73AD21;
+  color: white;
+  text-align: center
 }
 
-#notificationC span.dismiss {
-    border:2px solid #FFF;
-    padding:0 5px;
-    cursor:pointer;
-    float:right;
-    margin-right:10px;
+.modal-dialog {
+          width: 360px;
 }
 
-#notificationC a {
-    color:white;
-    text-decoration:none;
-    font-weight:bold
+.modal-header{
+  background: #99ccff;
 }
 
 </style>
 
 </head>
 <body>
+		<!--
 		<div id="notification" style="display: none;">
 			<span class="dismiss"><a title="dismiss this notification">X</a></span>
 		</div>
+		-->
 	<div class="container">
-	<!--
-	   <div class="row">
-			<button type="button" id="btn1">Show</button>
-			<button type="button" id="btn2">Hide</button>
+
+	<div id="myModal" class="modal fade">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title w-100 text-center">Lot Explanation Service <br>解签服务</h5>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<h5>想要进入了解您抽到的签，请登入以下账号 <br> Zoom ID: 952475634 <br> 密码： 123456<br></h5>
+					<p id="rcorners2">大年初一到初三 12/2 - 14/2 <br>（华语服务） <br> 10am - 12pm <br> 1pm - 3pm <br> 3pm - 5pm</p>
+				</div>
+			</div>
 		</div>
-	-->
+	</div>
+
 		<div class="row">	
 			<div class="col" id="imgDiv">
 				<img src="./assets/img/lot/lotC1.jpg" class="img-fluid" id="lotCImg">
@@ -117,16 +122,11 @@ $("#notificationC").fadeIn("slow").append("如果您需要解签协助，请在�
 $(".dismiss").click(function(){
        $("#notificationC").fadeOut("slow");
 });
-/*
-$(document).ready(function(){
-	$('#btn1').click(function(){
-   		$('#imgDiv').show();
+
+
+	$(document).ready(function(){
+		$("#myModal").modal('show');
 	});
-  	$('#btn2').click(function(){
-   		$('#imgDiv').hide();
-	});
-});
-*/
 </script>
 
 </body>
