@@ -482,7 +482,7 @@ img {
 	  return 'xl'
 	}
 	
-	function runHitCounter(){
+	function runHitCounter(){	
 		if (location.hostname.toLowerCase() == ""){
 		  // Your web app's Firebase configuration
 		  var firebaseConfig = {
@@ -558,6 +558,7 @@ img {
 <script>
 	
 	function getHitCounter(){
+	    console.log("loc", location.hostname.toLowerCase());
 		if (location.hostname.toLowerCase() == ""){
 		  // Your web app's Firebase configuration
 		  var firebaseConfig = {
