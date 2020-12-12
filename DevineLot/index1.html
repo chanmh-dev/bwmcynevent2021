@@ -16,8 +16,11 @@
 
 <style>
 body{
-	background-color: powderblue;
-	overflow: hidden;
+    //background-image: url("./assets/img/GuanYin2.jpg");
+    background-repeat: no-repeat;    
+	background-position: top;
+	background-color: #ffd5e9;
+	//overflow: hidden;
 }
 
 .imageBanner {
@@ -39,11 +42,14 @@ body{
 
 .imageCentre {
   width: 100%;
+  //left: -70%;
   display: block;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   margin: 0 auto;
+  //display: none;
 }
+
 
 .qian {
   width: 15%;
@@ -108,21 +114,27 @@ img {
   z-index:99;
 }
 
+#test{
+  position: absolute;
+  z-index:1;
+  display: none;
+}
+
 </style>
 
 </head>
 <body>
-
+<img src="./assets/img/cloud.jpg" id= "test" width="100%" height="auto">
 <div class="imageBanner" id="imgBanner" >
 	<div class="counter-box"> <span class="counter" id="counterValue">0</span>
 		<h5>求签数据</h5>
 	</div>
 	<button class="btn" id="lot_btn">Lot number explanation<br/>解签</button>
    <div class="imageLeft">
-	  <img src="qtong-small.png" id="item">
+	  <img src="./assets/img/qian-tong.png" id="item" onmousedown="playSound()">
    </div>
    <div class="imageCentre">
-	  <img src="GuanYin.jpg">
+	  <img src="./assets/img/GuanYin2.jpg">
    </div>
    <div class="qian-container" >
 	  <img src="./assets/img/qian/qian1.png" id="qian1" class="qian">
@@ -235,8 +247,9 @@ img {
 	  <img src="./assets/img/qian/qian99.png" id="qian99" class="qian">
 	  <img src="./assets/img/qian/qian100.png" id="qian100" class="qian">	  
    </div>
-      
+
 </div>
+
 
 <script>
     var random_num = Math.floor((Math.random() * 100) + 1);
@@ -255,6 +268,24 @@ img {
 	var y_limit = 450;
 	
 	var env = findBootstrapEnvironment();	
+	
+	var clickSound = new Audio("./assets/audio/shake.mp3");
+	clickSound.loop = true;
+
+	function enableLoop() { 
+	  x.loop = true;
+	  x.load();
+	} 
+
+	function disableLoop() { 
+	  x.loop = false;
+	  x.load();
+	} 
+	
+	function playSound() {
+		console.log("mouse clicked");
+		clickSound.play();
+	}
 	
 
     item.addEventListener("touchstart", dragStart, false);
@@ -275,11 +306,13 @@ img {
 	}
 
     function dragStart(e) {
-	 console.log("touchstart")
+	 
 	 document.getElementById(qian+random_num).style.display = "none";
-	 document.getElementById("lot_btn").style.display = "none";
+	 document.getElementById("lot_btn").style.display = "none";	 
 	  reset1();
       if (e.type === "touchstart") {
+	  	console.log("touchstart")
+	    //playSound();
         initialX = e.touches[0].clientX - xOffset;
         initialY = e.touches[0].clientY - yOffset;
       } else {
@@ -290,9 +323,12 @@ img {
       if (e.target === dragItem) {
         active = true;
       }
+	  
+	  
     }
 
     function dragEnd(e) {
+	  clickSound.pause();
 	  random_num = Math.floor((Math.random() * 100) + 1);
 	  document.getElementById("lot_btn").style.display = "block";
 	  document.getElementById(qian+random_num).style.display = "block";
@@ -483,7 +519,7 @@ img {
 	}
 	
 	function runHitCounter(){	
-		if (location.hostname.toLowerCase() == "chanmh-dev.github.io"){
+		//if (location.hostname.toLowerCase() == "chanmh-dev.github.io"){
 		  // Your web app's Firebase configuration
 		  var firebaseConfig = {
 			apiKey: "AIzaSyDYCHz8eLeA5QX5BDXvLmwyRAcXnahNOuU",
@@ -549,7 +585,7 @@ img {
 			}).catch(function (fromReject) {
 			  console.log(error);
 			})
-		}
+		//}
 	}	
 
 </script>
@@ -559,7 +595,7 @@ img {
 	
 	function getHitCounter(){
 	    console.log("loc", location.hostname.toLowerCase());
-		if (location.hostname.toLowerCase() == "chanmh-dev.github.io"){
+		//if (location.hostname.toLowerCase() == "chanmh-dev.github.io"){
 		  // Your web app's Firebase configuration
 		  var firebaseConfig = {
 			apiKey: "AIzaSyDYCHz8eLeA5QX5BDXvLmwyRAcXnahNOuU",
@@ -625,7 +661,7 @@ img {
 			}).catch(function (fromReject) {
 			  console.log(error);
 			})
-		}
+		//}
 	}	
 
 	$(document).ready(function() {
