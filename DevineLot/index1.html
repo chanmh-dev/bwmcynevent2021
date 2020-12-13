@@ -20,6 +20,7 @@ body{
     background-repeat: no-repeat;    
 	background-position: top;
 	background-color: #ffd5e9;
+	background-image: linear-gradient(white, pink);
 	//overflow: hidden;
 }
 
@@ -91,11 +92,11 @@ img {
   position: absolute;
   display: none;
   z-index:99;
-  top: 90%;
-  left: 68%;
+  top: 75%;
+  left: 65%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #555;
+  background-color: #d9534f;
   color: white;
   font-size: 16px;
   padding: 10px 18px;
@@ -129,12 +130,12 @@ img {
 	<div class="counter-box"> <span class="counter" id="counterValue">0</span>
 		<h5>求签数据</h5>
 	</div>
-	<button class="btn" id="lot_btn">Lot number explanation<br/>解签</button>
+	<button class="btn" class="btn" id="lot_btn">Lot number interpretation<br/>解签</button>
    <div class="imageLeft">
-	  <img src="./assets/img/qian-tong.png" id="item" ontouchstart="playSound()">
+	  <img src="./assets/img/qian-tong.png" id="item" ontouchstart="playSound()" onmousedown="playSound()">
    </div>
    <div class="imageCentre">
-	  <img src="./assets/img/GuanYin2.jpg">
+	  <img src="./assets/img/GuanYin3.jpg">
    </div>
    <div class="qian-container" >
 	  <img src="./assets/img/qian/qian1.png" id="qian1" class="qian">
@@ -312,7 +313,7 @@ img {
 	  reset1();
       if (e.type === "touchstart") {
 	  	console.log("touchstart")
-	    playSound();
+	    //playSound();
         initialX = e.touches[0].clientX - xOffset;
         initialY = e.touches[0].clientY - yOffset;
       } else {

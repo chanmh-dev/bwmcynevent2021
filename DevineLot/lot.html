@@ -13,7 +13,7 @@
 
 <style>
 body{
-	background-color: powderblue;
+	background-color: #ffd5e9;
 }
 
 #notification {
@@ -49,16 +49,16 @@ body{
 #rcorners2 {
   border-radius: 25px;
   border: 2px solid #73AD21;
-  padding: 20px; 
-  width: 325px;
-  height: 160px;  
+  padding: 15px; 
+  width: 275px;
+  height: 180px;  
   background: #73AD21;
   color: white;
   text-align: center
 }
 
 .modal-dialog {
-          width: 360px;
+          width: 310px;
 }
 
 .modal-header{
@@ -80,12 +80,12 @@ body{
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title w-100 text-center">Lot Explanation Service <br>解签服务</h5>
+					<h5 class="modal-title w-100 text-center">Lot interpretation Service <br>解签服务</h5>
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body">
-					<h5>想要进入了解您抽到的签，请登入以下账号 <br> Zoom ID: 952475634 <br> 密码： 123456<br></h5>
-					<p id="rcorners2">大年初一到初三 12/2 - 14/2 <br>（华语服务） <br> 10am - 12pm <br> 1pm - 3pm <br> 3pm - 5pm</p>
+					<h5>想要进一步了解您抽到的签，请登入以下账号: <br> For lot interpretaton assistance, please join the following zoom session:<br> <br>Zoom ID: 6565477890 <br> Pwd： 1234<br></h5>
+					<h5 id="rcorners2">大年初一到初三 <br> First to third day of the Chinese Lunar New Year<br>(12/2) 3pm - 5pm <br> (13/2) 10am - 12pm <br> (14/2) 7pm - 9pm</h5>
 				</div>
 			</div>
 		</div>
@@ -111,7 +111,7 @@ console.log(lotE);
 document.getElementById("lotCImg").setAttribute('src', lotC);
 document.getElementById("lotEImg").setAttribute('src', lotE);
 
-var message = "If you need assistance for the explanation, please join the zoom session (Zoom ID 93847123) on Feb 12 10am - 12pm \n如果您需要解签协助，请在二月十二日 10am - 12pm 上线 (Zoom ID 93847123)";
+var message = "If you need assistance for the lot interpretation, please join the zoom session (Zoom ID 93847123) on Feb 12 10am - 12pm \n如果您需要解签协助，请在二月十二日 10am - 12pm 上线 (Zoom ID 93847123)";
 
 $("#notification").fadeIn("slow").append(message);
 $(".dismiss").click(function(){
