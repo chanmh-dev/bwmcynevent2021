@@ -369,13 +369,13 @@ img {
 	function stopSound()
 	{
 		  clickSound.pause();
+		  document.getElementById("lot_btn").style.display = "block";
 	}
 	
 	function showLot()
 	{
 
 	  random_num = Math.floor((Math.random() * 100) + 1);
-	  document.getElementById("lot_btn").style.display = "block";
 	  document.getElementById(qian+random_num).style.display = "block";
       initialX = 0;//currentX;
       initialY = 0;//currentY;
