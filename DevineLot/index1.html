@@ -74,13 +74,28 @@ body{
         top: 50%;
     }
 }
+
 @keyframes floatQian {
     0% {
-        top:63%;
+        top:62%;
     }
     100% {
         top: 50%;
     }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 
@@ -132,7 +147,7 @@ img {
 	</div>
 	<button class="btn" class="btn" id="lot_btn">Lot number interpretation<br/>解签</button>
    <div class="imageLeft">
-	  <img src="./assets/img/qian-tong.png" id="item" ontouchstart="playSound()" onmousedown="playSound()">
+	  <img src="./assets/img/qian-tong.png" id="item" ontouchstart="touchstart()" onmousedown="mousedown()">
    </div>
    <div class="imageCentre">
 	  <img src="./assets/img/GuanYin3.jpg">
@@ -284,8 +299,18 @@ img {
 	} 
 	
 	function playSound() {
-		console.log("mouse clicked");
+		console.log("play sound");
 		clickSound.play();
+	}
+	
+	function touchstart(){
+		console.log("touch start");
+		playSound();
+	}
+	
+	function mousedown(){
+		console.log("mouse down");
+		playSound();
 	}
 	
 
@@ -307,12 +332,12 @@ img {
 	}
 
     function dragStart(e) {
-	 
+	 console.log("drag start")
 	 document.getElementById(qian+random_num).style.display = "none";
 	 document.getElementById("lot_btn").style.display = "none";	 
 	  reset1();
       if (e.type === "touchstart") {
-	  	console.log("touchstart")
+	  	console.log("drag touch start")
 	    //playSound();
         initialX = e.touches[0].clientX - xOffset;
         initialY = e.touches[0].clientY - yOffset;
@@ -329,6 +354,20 @@ img {
     }
 
     function dragEnd(e) {
+	    console.log("drag end")
+		var s = document.getElementById("item");
+		s.classList.add("shake");
+		setTimeout(showLot, 2000);
+		s.style.WebkitAnimation = "shake 0.5s 4"; // Code for Chrome, Safari and Opera
+		s.style.animation = "shake 0.5s 4";     // Standard syntax
+		//s.classList.remove("shake");
+		//showLot();
+
+	    active = false;
+    }
+	
+	function showLot()
+	{
 	  clickSound.pause();
 	  random_num = Math.floor((Math.random() * 100) + 1);
 	  document.getElementById("lot_btn").style.display = "block";
@@ -343,12 +382,12 @@ img {
 
       active = false;
 	 // timer();
-	  console.log("drag ends")
+	  console.log("showLot")
 	  console.log("x", currentX)
 	  console.log("y", currentY)
 	  
-	  runHitCounter();
-    }
+	//  runHitCounter();
+	}
 
     function drag(e) {
       if (active) {
@@ -389,6 +428,11 @@ img {
 	if (typeof my_time !== 'undefined'){
 		clearTimeout(my_time);
 	}
+	
+	var el = document.getElementById('item');
+	el.style.animation = 'none';
+	el.offsetHeight; /* trigger reflow */
+	el.style.animation = null; 
 
 	console.log(qianChosen);
 	qianChosen = qian + random_num;
