@@ -16,6 +16,17 @@ body{
 	background-color: #ffd5e9;
 }
 
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #ff99aa;
+  background: rgba(255, 153, 170, 0.3);
+  padding: 10px;
+  font-size: 20px;
+  z-index:9;
+}
+
 #notification {
     position:fixed;
     top:0px; /* Set to 0 or wherever */
@@ -74,8 +85,15 @@ body{
 			<span class="dismiss"><a title="dismiss this notification">X</a></span>
 		</div>
 		-->
-	<div class="container">
 
+	<div class="container">
+   <div class="sticky text-center">
+	  <div class="btn-group">
+		<button id = "donation" type="button" class="btn btn-danger">Donation (捐款)</button>
+		<button id = "service" type="button" class="btn btn-success">Lot Interpretation Service (解签服务)</button>
+		<button id = "home" type="button" class="btn btn-primary">Home (主页)</button>
+	  </div>   
+   </div>	
 	<div id="myModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -123,10 +141,23 @@ $(".dismiss").click(function(){
        $("#notificationC").fadeOut("slow");
 });
 
+$('#service').on('click', function (e) {
+	$("#myModal").modal('show');
+})
 
+$('#donation').on('click', function (e) {
+	window.open('https://offering.bwmonastery.org.sg/collections/monthly-avalokiteshvara-bodhisattva-great-compassion-repentance-puja-dana-offering')
+})
+
+$('#home').on('click', function (e) {
+	window.location.href = '../index.html'
+})
+
+/*
 	$(document).ready(function(){
 		$("#myModal").modal('show');
 	});
+*/	
 </script>
 
 </body>
