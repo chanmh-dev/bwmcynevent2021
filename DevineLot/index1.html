@@ -349,26 +349,31 @@ img {
       if (e.target === dragItem) {
         active = true;
       }
-	  
-	  
+	  	  
     }
 
     function dragEnd(e) {
 	    console.log("drag end")
+		active = false;
+
 		var s = document.getElementById("item");
 		s.classList.add("shake");
-		setTimeout(showLot, 2000);
+		setTimeout(stopSound, 2000);
 		s.style.WebkitAnimation = "shake 0.5s 4"; // Code for Chrome, Safari and Opera
 		s.style.animation = "shake 0.5s 4";     // Standard syntax
-		//s.classList.remove("shake");
-		//showLot();
+		showLot();
 
-	    active = false;
+	   // active = false;
     }
+	
+	function stopSound()
+	{
+		  clickSound.pause();
+	}
 	
 	function showLot()
 	{
-	  clickSound.pause();
+
 	  random_num = Math.floor((Math.random() * 100) + 1);
 	  document.getElementById("lot_btn").style.display = "block";
 	  document.getElementById(qian+random_num).style.display = "block";
@@ -386,7 +391,7 @@ img {
 	  console.log("x", currentX)
 	  console.log("y", currentY)
 	  
-	//  runHitCounter();
+	  runHitCounter();
 	}
 
     function drag(e) {
@@ -440,6 +445,7 @@ img {
 	console.log("random number",  random_num);
 	document.getElementById(qianChosen).style.left= "29%";
 	document.getElementById(qianChosen).style.top= "62%";
+
 	var y=document.getElementById(qianChosen).offsetTop;
 	var x=document.getElementById(qianChosen).offsetLeft;
 	//document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
