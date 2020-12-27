@@ -3,8 +3,6 @@
 <head>
 	<meta charset=“UTF-8”>
 	<title>Wheel of Fortune</title>
-	<link rel="stylesheet" href="alert.css">
-	<script src="alert.js"></script> 
 	<style>
 		button.link { background:none;border:none; }
 		*{
@@ -19,15 +17,16 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			height: 100vh;
+			height: 80vh;
 			overflow: hidden;
 			background: #FB143E;
 			background-size: cover;
 		}
 		.mainRing{
 			position: relative;
-			width: 500px;
-			height: 500px;
+			width: 700px;
+			height: 700px;
+			text-align: center;
 		}
 
 		.mainRing:after{
@@ -37,8 +36,8 @@
 			height: 32px;
 			background: url('Left Arrow Png.png') no-repeat;
 			background-size: 32px;
-			top: -20px;
-			left: 45%;
+			top: 10%;
+			left: 47%;
 		}
 		.section{
 			width: 100%;
@@ -51,11 +50,11 @@
 		}
 		.spin{
 			position: absolute;
-			top: 50%;
+			top: 62%;
 			left: 50%;
 			transform: translate(-50%, -50%);
-			width: 130px;
-			height: 130px;
+			width: 185px;
+			height: 185px;
 			border-radius: 50%;
 			border: 2px solid #000000;
 			background-color: #000000;
@@ -67,8 +66,8 @@
 		}
 		.spin:active{
 			//to change size on button press...
-			width: 125px;
-			height: 125px;
+			width: 175px;
+			height: 175px;
 			//font-size: 20px;
 		}
 		.mainRing.animate:after{
@@ -84,19 +83,37 @@
     			top: 0;
     			left: 0;
     		}
+		.Clickables{
+			
+			color: #F5F5DC;
+			background: #FB143E;
+			border-radius: 8px;
+			padding: 10px 25px;
+			cursor: pointer;
+			font-size:25px;
+		}
+		.Clickables:hover{
+			background: #F5F5DC;
+			color: #FB143E;
+		}
 	</style>
 </head>
 <body>
-		<b style="text-align: center;font-size:30px;color:#F5F5DC">Spin the<br>Wheel of<br>Fortune<br>now!</b>
 		<div id= 'mainRing' class=mainRing>
+				<b style="text-align: center;font-size:30px;color:#F5F5DC">Spin the Wheel of Fortune now!</b>
+				<br>
+				<b style="text-align: center;font-size:30px;color:#F5F5DC">马上 转转转 发发发吧!</b>
+				<br>
+				<br>
 			<div id='section' class=section>
-				<img src="WheelOut.png" style="width:490px;height:490px;">
+				<img src="WheelOut.png" style="width: 680px;height: 680px;">
 			</div>
-			<button class=spin onclick=wheelBrr();this.onclick=null;><img src="WheelButton.png" style="width:130px;height:130px;"/></button>
+			<button class=spin onclick=wheelBrr();this.onclick=null;><img src="WheelButton.png" style="width:185px;height:185px;"/></button>
+				<button class="Clickables" id="ToText" onclick=ResultPage() disabled></button>
 		</div>
-		<b style="text-align: center;font-size:30px;color:#F5F5DC">马上<br>转转转<br>发发发吧!</b>
-
+		
 <script>
+
 	function wheelBrr(){
 		new Audio('Spin.wav').play();
 		var valueList = ["Auspicious Year of the Rat - 鼠年大吉 [1]","福慧双增 - Increasing Bliss & Wisdom [15]","金玉满堂 - Abundance of Wealth & Knowledge [12]","丰财聚宝 - Abundance of Wealth & Treasures [11]","五福临门 - Endowed with the 5 Blessings [10]","六时吉祥 - Blessings Round the Clock [9]","四季平安 - Peace & Auspicious In The 4 Seasons [8]","步步高升 - Rising Above All [7]","万事如意 - All Dreams Fulfilled [6]","幸福安康 - Bliss, Safety & Health [5]","花开富贵 - Blossoming Fortune [3]","合家欢乐 - Happy & Joyous Family [2]","Auspicious Year of the Rat - 鼠年大吉 [1]","福慧双增 - Increasing Bliss & Wisdom [15]","金玉满堂 - Abundance of Wealth & Knowledge [12]","丰财聚宝 - Abundance of Wealth & Treasures [11]","五福临门 - Endowed with the 5 Blessings [10]","六时吉祥 - Blessings Round the Clock [9]","四季平安 - Peace & Auspicious In The 4 Seasons [8]","步步高升 - Rising Above All [7]","万事如意 - All Dreams Fulfilled [6]","幸福安康 - Bliss, Safety & Health [5]","花开富贵 - Blossoming Fortune [3]","合家欢乐 - Happy & Joyous Family [2]"];
@@ -107,21 +124,39 @@
 
 		var element = document.getElementById('mainRing');
 
-
 		setTimeout(
 			function(){
 				console.log(Decided);
 				var getValue = valueList[Decided];
 				localStorage.setItem("Response", Decided);
-				alert("You got " + getValue);
-				//window.location.href = "Result.html";
-				//win.focus();
+				var Results = document.getElementById('ToText');
+				Results.innerHTML = "You got " + getValue + "! <br>Click here for more details!";
+				Results.style.color = '#F5F5DC';
+				Results.style.fontSize = '30px';
+				Results.style.borderRadius = "8px";
+				Results.style.padding= "10px 25px";
+				Results.style.backgroundColor= '#FB143E';
+				Results.disabled = false;
 			}, 
 			5000);
-		
 	}
+	function ResultPage(){
+		window.location.href = "Result.html";
+	}
+
+document.getElementById("ToText").onmouseover = function() {mouseOver()};
+document.getElementById("ToText").onmouseout = function() {mouseOut()};
+
+function mouseOver() {
+  document.getElementById("ToText").style.backgroundColor = "#F5F5DC";
+  document.getElementById("ToText").style.color = "#FB143E";
+}
+
+function mouseOut() {
+  document.getElementById("ToText").style.backgroundColor = "#FB143E";
+  document.getElementById("ToText").style.color = "#F5F5DC";
+}
+
 </script>
-
-
 </body>
 </html>
