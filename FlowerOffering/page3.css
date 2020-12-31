@@ -1,0 +1,192 @@
+body{
+  background-image: url("Images2/Flower Offering-Amended Pg 3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: red;
+  background-size: auto 100%;
+  overflow-y:hidden;
+}
+.cups{
+  position: relative;
+  display: block;
+  width: 100%;
+  top: 30vh;
+  height: auto;
+  text-align: center;
+  justify-content: center;
+}
+.banner{
+  text-align: center;
+}
+.button{
+  position: absolute;
+  text-align: center;
+  top: 54vh;
+  left: 50vh;
+}
+.button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.button button{
+  padding: 10vh;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+}
+.textdiv{
+  position: relative;
+  text-align: center;
+  top: 20vh;
+
+}
+.entext{
+  font-family: "Times New Roman";
+
+  font-size: 35px;
+  color: white;
+  animation-name: fadeanim1;
+  animation-fill-mode: forwards;
+  animation-duration: 2s
+}
+.chtext{
+  font-family: KaiTi;
+
+  font-size: 40px;
+  color: white;
+  animation-name: fadeanim1;
+  animation-fill-mode: forwards;
+  animation-duration: 4s
+}
+.divider{
+    height:auto;
+    display:inline-block;
+}
+#btn1{
+
+  position: fixed;
+  left: 32vw;
+  top: 55vh;
+}
+#btn1:focus {
+  outline: none;
+  box-shadow: none;
+}
+#btn2{
+
+  position: fixed;
+  left: 45vw;
+  top: 55vh;
+}
+#btn2:focus {
+  outline: none;
+  box-shadow: none;
+  fill:none;
+}
+#btn3{
+
+  position: fixed;
+  left: 58vw;
+  top: 55vh;
+}
+#btn3:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#btnnext{
+  position: relative;
+  width: 200%;
+  bottom: -82vh;
+  left: 130vh;
+
+}
+@keyframes fadeanim1 {
+    0%{opacity: 0}
+    25%{opacity: 0}
+    50%{opacity: 0}
+    75%{opacity: 0}
+    100%{opacity: 100}
+
+}
+@media (min-width: 1920px) and (max-width: 2560px)  {
+  .divider{
+    width: 105px;
+  }
+  .button button{
+    padding: 100px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+  }
+
+}
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Flower Offering-Mobile Pg 3.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+
+
+    }
+    .button{
+      position: absolute;
+      text-align: center;
+      top: 54vh;
+      left: 50vh;
+    }
+    .button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .button button{
+      padding: 6vh;
+      background-color: Transparent;
+      background-repeat:no-repeat;
+      border: none;
+      cursor:pointer;
+      overflow: hidden;
+    }
+    #btn1{
+
+      position: fixed;
+      left: 6vw;
+      top: 60vh;
+    }
+    #btn1:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    #btn2{
+
+      position: fixed;
+      left: 37vw;
+      top: 60vh;
+    }
+    #btn2:focus {
+      outline: none;
+      box-shadow: none;
+      fill:none;
+    }
+    #btn3{
+
+      position: fixed;
+      left: 69vw;
+      top: 60vh;
+    }
+    #btn3:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+}
