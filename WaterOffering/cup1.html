@@ -1,84 +1,29 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="cup1.css">
+    <script src="">
+    </script>
+    <title></title>
+  </head>
+  <body onload="">
 
-.bg {
-  background-image: url("Images/BuddhaStatue.jpg");
+    <div class="banner">
+    </div>
 
-  height: 100%; 
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-}
-#instructions{
-font-size:30px;
-}
-#cup1{
-position:relative;
-height:10%;
-top:1150px;
-left:15%;
-animation-name:anim;
-animation-duration: 16s;
-animation: anim 1.0s forwards;
-animation-delay:1.5s;
-transition:width 1s ease-in;
-}
-#cup2{
-position:relative;
-height:10%;
-top:1150px;
-left:30%;
-}
-#cup3{
-position:relative;
-height:10%;
-top:1150px;
-left:45%;
-
-}
-
-#cup4{
-position:relative;
-height:10%;
-top:1150px;
-left:60%;
-}
-
-@keyframes anim{
-  0%   {left:15%; top:1150px;}
-  25%  {left:20%; top:1000px;}
-  50%  {left:28%; top:850px;}
-  75%  {left:35%; top:700px;}
-  100% {left:47%; top:550px;}
-
-}
+    <div class="cups">
+      <img id="cup3" src="Images/cup3.png" alt="">
+    </div>
 
 
-</style>
-</head>
-<body>
-<header>
-<center><p id="instructions">
-Please do your supplication and click Next when you are done.</p></center>
-</header>
 
-<div class="bg">
-<img id="cup1" src="Images/watercup.png">
-<img id="cup2" src="Images/cup2.png" >
-<img id="cup3" src="Images/cup3.png">
-<img id="cup4" src="Images/cup4.png">
+    <div class="button">
+      <button id="btntest" type="button" name="button" onclick="window.location.href='page5-1.html';"></button>
 
-</div>
-<button name="btnback" type = "button" style="float:left" onclick="window.location.href='WaterOffering2.html';">Back</button>
-<button name="btnnext" type = "button" style="float:right"  onclick="window.location.href='lastpage1.html';">Next</button>
+    </div>
 
-</body>
+  </body>
 </html>

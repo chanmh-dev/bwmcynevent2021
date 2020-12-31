@@ -1,0 +1,136 @@
+body{
+  background-image: url("Images2/Water Offering-Pg 5-2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: red;
+  background-size: auto 100%;
+  overflow-y:hidden;
+}
+.cups{
+  position: relative;
+  display: block;
+  width: 100%;
+  top: 30vh;
+  height: auto;
+  text-align: center;
+  justify-content: center;
+}
+.banner{
+  text-align: center;
+}
+.button{
+width: 10%;
+
+}
+#btntest{
+  position: absolute;
+width: 20%;
+height: 9vw;
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100%;
+font-size: 2vw;
+border: none;
+background-color: transparent;
+left: 77.5%;
+top: 84%;
+}
+#btntest:focus{
+  outline: none;
+}
+#btnnext{
+  position: fixed;
+  width: 20%;
+  bottom: 5vh;
+  left: 135vh;
+
+}
+
+
+.divider{
+    width:80px;
+    height:auto;
+    display:inline-block;
+}
+.cups{
+  text-align: center;
+}
+#cup3{
+  position: relative;
+  transform: scale(0.25);
+  animation-name: cupanim;
+  animation-fill-mode: forwards;
+  animation-duration: 4s;
+}
+.textdiv{
+  position: relative;
+  text-align: center;
+  top: 15vh;
+
+}
+.entext{
+  font-family: "Times New Roman";
+
+  font-size: 25px;
+  color: white;
+  animation-name: fadeanim1;
+  animation-fill-mode: forwards;
+  animation-duration: 2s
+}
+.chtext{
+  font-family: KaiTi;
+
+  font-size: 25px;
+  color: white;
+  animation-name: fadeanim1;
+  animation-fill-mode: forwards;
+  animation-duration: 4s
+}
+@keyframes cupanim {
+  from{
+    transform: scale(0.25);
+  }to{
+    transform: scale(0.43);
+  }
+}
+@keyframes fadeanim1 {
+    0%{opacity: 0}
+    25%{opacity: 0}
+    50%{opacity: 0}
+    75%{opacity: 0}
+    100%{opacity: 100}
+
+}
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Water Offering-Mobile Pg 5-2 Amended.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+
+
+    }
+
+    #btntest{
+      position: absolute;
+    width: 70%;
+    height: 15vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 15%;
+    top: 91%;
+    }
+    #btntest:focus{
+      outline: none;
+    }
+
+}

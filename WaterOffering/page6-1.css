@@ -1,0 +1,219 @@
+body{
+  background-image: url("Images2/Water Offering-Pg 6-2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: red;
+  background-size: auto 100%;
+  overflow-y:hidden;
+}
+.cups{
+  position: relative;
+  display: block;
+  width: 100%;
+  top: 30vh;
+  height: auto;
+  text-align: center;
+  justify-content: center;
+}
+.banner{
+  text-align: center;
+}
+.button{
+width: 10%;
+
+}
+
+#btnmain{
+  font-family: KaiTi;
+  position: absolute;
+width: 25%;
+height: 3vw;
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100%;
+font-size: 2vw;
+border: none;
+background-color: transparent;
+left: 75.5%;
+top: 81.4%;
+}
+#btnmain:focus{
+  outline: none;
+}
+
+
+#btnoffer{
+  font-family: KaiTi;
+  position: absolute;
+width: 25%;
+height: 3vw;
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100%;
+font-size: 2vw;
+border: none;
+background-color: transparent;
+left: 75.5%;
+top: 86.5%;
+}
+#btnoffer:focus{
+  outline: none;
+}
+
+#btndonate{
+  font-family: KaiTi;
+  padding: 1;
+  position: absolute;
+width: 25%;
+height: 3vw;
+background-position: center;
+background-repeat: no-repeat;
+background-size: 100%;
+font-size: 2vw;
+border: none;
+background-color: transparent;
+left: 75.5%;
+top: 91.5%;
+}
+#btndonate:focus{
+  outline: none;
+}
+
+
+
+.divider{
+    width:80px;
+    height:auto;
+    display:inline-block;
+}
+.cups{
+  text-align: center;
+}
+.textdiv{
+  position: absolute;
+  text-align: center;
+  top: 78vh;
+  left: 32%;
+
+}
+.entext{
+  font-family: "Times New Roman";
+
+  font-size: 20px;
+  color: white;
+  animation-name: fadeanim1;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+}
+.chtext{
+  font-family: KaiTi;
+
+  font-size: 20px;
+  color: white;
+  animation-name: fadeanim1;
+  animation-fill-mode: forwards;
+  animation-duration: 4s;
+}
+.hands{
+  position: relative;
+  transform: scale(0.20);
+  font-size: 20px;
+  color: white;
+  margin-top: -45vh;
+  animation-name: fadeanim1;
+  animation-fill-mode: forwards;
+  animation-duration: 6s;
+  left: 15vw;
+}
+@keyframes fadeanim1 {
+    0%{opacity: 0}
+    25%{opacity: 0}
+    50%{opacity: 0}
+    75%{opacity: 0}
+    100%{opacity: 100}
+
+}
+#cup3{
+  position: relative;
+  transform: scale(0.25);
+  top: -10vh;
+}
+@keyframes cupanim {
+  from{
+    transform: scale(0.25);
+  }to{
+    transform: scale(0.43);
+  }
+}
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Water Offering-Mobile Pg 6-2 Amended.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+
+
+    }
+
+    #btnmain{
+      font-family: KaiTi;
+      position: absolute;
+    width: 80%;
+    height: 12vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 10%;
+    top: 81.4%;
+    }
+    #btnmain:focus{
+      outline: none;
+    }
+
+
+    #btnoffer{
+      font-family: KaiTi;
+      position: absolute;
+    width: 80%;
+    height: 12vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 10%;
+    top: 86.5%;
+    }
+    #btnoffer:focus{
+      outline: none;
+    }
+
+    #btndonate{
+      font-family: KaiTi;
+      position: absolute;
+    width: 80%;
+    height: 12vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 10%;
+    top: 91.5%;
+    }
+    #btndonate:focus{
+      outline: none;
+    }
+
+
+}
