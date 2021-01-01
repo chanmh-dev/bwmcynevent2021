@@ -1,3 +1,4 @@
+
 body{
   background-image: url("Images2/Water Offering-Pg 3.png");
   background-position: center;
@@ -67,9 +68,8 @@ body{
     display:inline-block;
 }
 #btn1{
-
   position: fixed;
-  left: 32vw;
+  left: 31vw;
   top: 55vh;
 }
 #btn1:focus {
@@ -117,6 +117,14 @@ body{
   .divider{
     width: 105px;
   }
+  /*
+  #btn1{
+  position: fixed;
+  left: 22vw;
+  top: 55vh;
+}*/
+
+
   .button button{
     padding: 100px;
     background-color: Transparent;
@@ -127,6 +135,18 @@ body{
   }
 
 }
+
+@media only screen
+  and (min-device-width: 481px)
+  and (max-device-width: 1044px){
+	  
+	  #btn1{
+	  position: fixed;
+	  left: 22vw;
+	  top: 55vh;
+	}  
+ }
+
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 480px)
@@ -158,8 +178,8 @@ body{
       cursor:pointer;
       overflow: hidden;
     }
+	
     #btn1{
-
       position: fixed;
       left: 6vw;
       top: 60vh;
@@ -169,7 +189,6 @@ body{
       box-shadow: none;
     }
     #btn2{
-
       position: fixed;
       left: 37vw;
       top: 60vh;

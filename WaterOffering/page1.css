@@ -49,6 +49,7 @@ body{
 width: 20%;
 height: auto;
 }
+
 #btntest{
   position: absolute;
 width: 20%;
@@ -59,9 +60,10 @@ background-size: 100%;
 font-size: 2vw;
 border: none;
 background-color: transparent;
-left: 77.5%;
+left: 77.5%; //40% is middle
 top: 84%;
 }
+
 #btntest:focus{
   outline: none;
 }

@@ -9,10 +9,10 @@ body{
 }
 .cups{
   display: block;
-    height: auto;
-	position:center;
-
+  height: auto;
+  position:center;
 }
+
 .banner{
   text-align: center;
 }
