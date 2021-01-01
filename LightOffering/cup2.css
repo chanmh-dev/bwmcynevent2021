@@ -7,11 +7,12 @@ body{
   background-size: auto 100%;
   overflow-y:hidden;
 }
+/*
 .cups{
   display: block;
   height: auto;
-
 }
+*/
 .banner{
   text-align: center;
 }
@@ -99,10 +100,22 @@ top: 92%;
     height:auto;
     display:inline-block;
 }
+
 .cups{
-  text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%)  
 }
+
 #cup2{
+	transform: scale(1);
+	animation-name: cupanim;
+	animation-fill-mode: forwards;
+	animation-duration: 4s;
+	display: block;
+/*	
   position: relative;
   top:  40px;
   transform: scale(0.25);
@@ -112,12 +125,16 @@ top: 92%;
   display: block;
   margin-left: auto;
   margin-right: auto;
+*/  
 }
+
 @keyframes cupanim {
-  from{
-    transform: scale(0.20);
+  from{	
+    //transform: scale(0.20);
+    transform: scale(1);	
   }to{
-    transform: scale(0.25);
+    //transform: scale(0.25);
+    transform: scale(2);	
   }
 }
 @keyframes fadeanim1 {
@@ -129,6 +146,7 @@ top: 92%;
 
 }
 @media (min-width: 1920px) and (max-width: 2560px)  {
+/*	
   .cups{
     position: relative;
     display: block;
@@ -138,6 +156,7 @@ top: 92%;
     text-align: center;
     justify-content: center;
   }
+*/  
   #btnnext{
     position: relative;
     width: 200%;
@@ -157,8 +176,6 @@ top: 92%;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
-
-
     }
 
     #btntest{
@@ -177,6 +194,7 @@ top: 92%;
     #btntest:focus{
       outline: none;
     }
+/*	
     .cups{
       display: block;
       width: 100%;
@@ -202,5 +220,12 @@ top: 92%;
         transform: scale(0.20);
       }
     }
-
+*/
+  @keyframes cupanim {
+      from{
+        transform: scale(0.7);
+      }to{
+        transform: scale(1.1);
+      }	  
+  }
 }
