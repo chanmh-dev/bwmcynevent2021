@@ -161,7 +161,7 @@ body{
 
       position: fixed;
       left: 6vw;
-      top: 60vh;
+      top: 55vh;
     }
     #btn1:focus {
       outline: none;
@@ -171,7 +171,7 @@ body{
 
       position: fixed;
       left: 37vw;
-      top: 60vh;
+      top: 55vh;
     }
     #btn2:focus {
       outline: none;
@@ -182,7 +182,7 @@ body{
 
       position: fixed;
       left: 69vw;
-      top: 60vh;
+      top: 55vh;
     }
     #btn3:focus {
       outline: none;
