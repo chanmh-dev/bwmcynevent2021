@@ -7,8 +7,8 @@ body{
   height: 100%;
   background-size: auto 100%;
   overflow-y:hidden;
-
 }
+
 .cups{
   position: relative;
   display: block;
@@ -18,35 +18,7 @@ body{
   text-align: center;
   justify-content: center;
 }
-.banner{
-  text-align: center;
-}
-.button{
-width: 10%;
 
-}
-#btntest{
-  position: absolute;
-width: 20%;
-height: 9vw;
-background-position: center;
-background-repeat: no-repeat;
-background-size: 100%;
-font-size: 2vw;
-border: none;
-background-color: transparent;
-left: 77%;
-top: 84%;
-}
-#btntest:focus{
-  outline: none;
-}
-.textdiv{
-  position: relative;
-  text-align: center;
-  top: 78vh;
-
-}
 .entext{
   font-family: "Times New Roman";
 
@@ -56,9 +28,9 @@ top: 84%;
   animation-fill-mode: forwards;
   animation-duration: 2s
 }
+
 .chtext{
   font-family: KaiTi;
-
   font-size: 20px;
   color: white;
   animation-name: fadeanim1;
@@ -66,10 +38,45 @@ top: 84%;
   animation-duration: 4s;
 }
 
+.banner{
+  text-align: center;
+}
+
+.button{
+width: 10%;
+
+}
+
+#btntest{
+	position: absolute;
+	width: 20%;
+	height: 9vw;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-size: 2vw;
+	border: none;
+	background-color: transparent;
+	left: 77%;
+	top: 84%;
+}
+
+#btntest:focus{
+  outline: none;
+}
+
+.textdiv{
+  position: relative;
+  text-align: center;
+  top: 78vh;
+}
+
+
 .hands{
   transform: scale(0.20);
 
 }
+
 #hand{
   position: absolute;
   top:  -72vh;
