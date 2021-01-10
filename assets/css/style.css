@@ -1156,5 +1156,11 @@ section {
   /* falls back to 16/9, but otherwise uses ratio from HTML */
   padding-bottom: calc(var(--aspect-ratio, .5625) * 100%); 
 }
+/*
+@media (min-width: 1305px) {
+  .container-fluid{
+    width: 1300px;
+  }
 
-
+}
+*/
