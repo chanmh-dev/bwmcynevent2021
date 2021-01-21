@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-.container .btn {
+.container .btn1 {
   position: absolute;
   top: 90%;
   left: 80%;
@@ -37,20 +37,22 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #d1332e;
   color: white;
   font-size: 16px;
-  //padding: 12px 24px;
+  //padding: 10px 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
-  min-width: 150px;
+  min-width: 160px;
 }
 
-.container .btn:hover {
+.container .btn1:hover {
   background-color: blue;
 }
 
 @media (max-width: 480px) {
-	.container .btn {
+	.container .btn1 {
 	  position: absolute;
 	  top: 105%;
 	  left: 25%;
