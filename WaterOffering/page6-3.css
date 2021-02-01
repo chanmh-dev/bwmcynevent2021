@@ -1,11 +1,13 @@
 body{
-  background-image: url("Images2/Water Offering-Pg 6-3.jpg");
+	background-color: #db3a2e;
+  background-image: url("Images2/Water Offering-Amended Pg 6-3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: red;
+  /*height: 100%;*/
   background-size: auto 100%;
   overflow-y:hidden;
+
 }
 .cups{
   position: relative;
@@ -214,3 +216,220 @@ top: 91.5%;
     }
 
 }
+
+/*added for ipad, ipad pro - landscape*/
+@media only screen
+  and (min-device-width: 1024px) /*chg*/
+  and (max-device-width: 1366px) /*chg*/
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Water Offering-Amended Pg 6-3.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain; /*chg to contain */
+
+
+    }
+
+    #btnmain{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%; /*chg to reference*/
+    height: 2vw; /*chg to reference*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none; /*set temporary border '2px dashed black'*/
+    background-color: transparent;
+    left: 75%; /* chg */
+    top: 73.4%; /* chg */
+    }
+    #btnmain:focus{
+      outline: none;
+    }
+
+
+    #btnoffer{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 77.5%;
+    }
+    #btnoffer:focus{
+      outline: none;
+    }
+
+    #btndonate{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 81.5%;
+    }
+    #btndonate:focus{
+      outline: none;
+    }
+
+}
+  
+/*added for ipad, ipad pro - portrait*/
+@media only screen
+  and (min-device-width: 768px) /*chg*/
+  and (max-device-width: 1024px) /*chg*/
+  and (orientation: portrait) /* chg*/
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Water Offering-Mobile Pg 6-3.png"); /* chg */
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain; /*chg to contain */
+
+
+    }
+
+    #btnmain{
+      font-family: KaiTi;
+      position: absolute;
+    width: 70%; /*chg to reference*/
+    height: 7vw;	/*chg to reference*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none; /*set temporary border '2px dashed black'*/
+    background-color: transparent;
+    left: 15%; /*chg*/
+    top: 81.4%; /*chg*/
+    }
+    #btnmain:focus{
+      outline: none;
+    }
+
+
+    #btnoffer{
+      font-family: KaiTi;
+      position: absolute;
+    width: 70%;
+    height: 7vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 15%;
+    top: 86.5%;
+    }
+    #btnoffer:focus{
+      outline: none;
+    }
+
+    #btndonate{
+      font-family: KaiTi;
+      position: absolute;
+    width: 70%;
+    height: 7vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 15%;
+    top: 91.5%;
+    }
+    #btndonate:focus{
+      outline: none;
+    }
+
+}  
+/*added for iphone X - landscape*/
+@media only screen
+  and (min-device-width: 812px) /*chg*/
+  and (max-device-width: 823px) /*chg*/
+  and (orientation: landscape) /*chg*/
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Water Offering-Amended Pg 6-3.jpg"); /* chg */
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain; /*chg to contain */
+
+
+    }
+
+    #btnmain{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%; /*chg*/
+    height: 2vw; /*chg*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none; /*set temporary border '2px dashed black'*/
+    background-color: transparent;
+    left: 75%; /*chg*/
+    top: 81.4%;	/*chg*/
+    }
+    #btnmain:focus{
+      outline: none;
+    }
+
+
+    #btnoffer{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 86.5%;
+    }
+    #btnoffer:focus{
+      outline: none;
+    }
+
+    #btndonate{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 91.5%;
+    }
+    #btndonate:focus{
+      outline: none;
+    }
+
+}  

@@ -1,20 +1,21 @@
 body{
-  background-image: url("Images2/Light Offering-Pg 4 Amended.jpg");
+	background-color: #db3a2e;
+  background-image: url("Images2/Light Offering-Pg 4-1 Amended.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: red;
+  /*height: 100%;*/
   background-size: auto 100%;
   overflow-y:hidden;
+
 }
-/*
-.cups{
+/*.cups{
   display: block;
   width: 100%;
   top: 30vh;
   height: auto;
-}
-*/
+
+}*/
 .banner{
   text-align: center;
 }
@@ -102,21 +103,7 @@ top: 84%;
     display:inline-block;
 }
 
-.cups{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-right: -50%;
-	transform: translate(-50%, -50%)  
-}
-
-#cup3{
-	transform: scale(1);
-	animation-name: cupanim;
-	animation-fill-mode: forwards;
-	animation-duration: 4s;
-	display: block;
-/*	
+/*#cup3{
   position: relative;
   top:  10px;
   transform: scale(0.15);
@@ -126,17 +113,14 @@ top: 84%;
   display: block;
   margin-left: auto;
   margin-right: auto;
-*/  
 }
 @keyframes cupanim {
-  from{	
-    //transform: scale(0.20);
-    transform: scale(1);	
+  from{
+    transform: scale(0.20);
   }to{
-    //transform: scale(0.25);
-    transform: scale(2);	
+    transform: scale(0.25);
   }
-}
+}*/
 @keyframes fadeanim1 {
     0%{opacity: 0}
     25%{opacity: 0}
@@ -146,7 +130,6 @@ top: 84%;
 
 }
 @media (min-width: 1920px) and (max-width: 2560px)  {
-/*	
   .cups{
     position: relative;
     display: block;
@@ -156,7 +139,6 @@ top: 84%;
     text-align: center;
     justify-content: center;
   }
-*/  
   #btnnext{
     position: relative;
     width: 200%;
@@ -171,11 +153,13 @@ top: 84%;
   and (max-device-width: 480px)
   and (-webkit-min-device-pixel-ratio: 2) {
     body{
-      background-image: url("Images2/Light Offering-Mobile Pg 4.png");
+      background-image: url("Images2/Light Offering-Mobile Pg 4-1.png");
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
+
+
     }
 
     #btntest{
@@ -194,8 +178,7 @@ top: 84%;
     #btntest:focus{
       outline: none;
     }
-/*	
-    .cups{
+    /*.cups{
       display: block;
       width: 100%;
       top: 30vh;
@@ -211,6 +194,7 @@ top: 84%;
       animation-duration: 4s;
       display: block;
       left: -33%;
+
     }
     @keyframes cupanim {
       from{
@@ -218,13 +202,181 @@ top: 84%;
       }to{
         transform: scale(0.20);
       }
+    }*/
+}
+
+/*ipad pro landscape*/
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Light Offering-Pg 4-1 Amended.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+
+
     }
-*/
-  @keyframes cupanim {
+
+    #btntest{
+      position: absolute;
+    width: 25%;
+    height: 5vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 81%;
+    }
+    #btntest:focus{
+      outline: none;
+    }
+    /*.cups{
+      display: block;
+      width: 100%;
+      top: 30vh;
+      height: auto;
+
+    }
+    #cup3{
+      position: relative;
+      top:  20px;
+      transform: scale(0.25);
+      animation-name: cupanim;
+      animation-fill-mode: forwards;
+      animation-duration: 4s;
+      display: block;
+      left: -33%;
+
+    }
+    @keyframes cupanim {
       from{
-        transform: scale(0.7);
+        transform: scale(0.15);
       }to{
-        transform: scale(1.1);
-      }	  
-  }
+        transform: scale(0.20);
+      }
+    }*/
+}
+
+/*ipad, ipad pro - portrait*/
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Light Offering-Mobile Pg 4-1.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+
+
+    }
+
+    #btntest{
+      position: absolute;
+    width: 70%;
+    height: 15vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 15%;
+    top: 91%;
+    }
+    #btntest:focus{
+      outline: none;
+    }
+    /*.cups{
+      display: block;
+      width: 100%;
+      top: 30vh;
+      height: auto;
+
+    }
+    #cup3{
+      position: relative;
+      top:  20px;
+      transform: scale(0.25);
+      animation-name: cupanim;
+      animation-fill-mode: forwards;
+      animation-duration: 4s;
+      display: block;
+      left: -33%;
+
+    }
+    @keyframes cupanim {
+      from{
+        transform: scale(0.15);
+      }to{
+        transform: scale(0.20);
+      }
+    }*/
+}
+
+/*added for iphone X - landscape*/
+@media only screen
+  and (min-device-width: 812px)
+  and (max-device-width: 823px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Light Offering-Pg 4-1 Amended.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+
+
+    }
+
+    #btntest{
+      position: absolute;
+    width: 25%;
+    height: 3vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 91%;
+    }
+    #btntest:focus{
+      outline: none;
+    }
+    /*.cups{
+      display: block;
+      width: 100%;
+      top: 30vh;
+      height: auto;
+
+    }
+    #cup3{
+      position: relative;
+      top:  20px;
+      transform: scale(0.25);
+      animation-name: cupanim;
+      animation-fill-mode: forwards;
+      animation-duration: 4s;
+      display: block;
+      left: -33%;
+
+    }
+    @keyframes cupanim {
+      from{
+        transform: scale(0.15);
+      }to{
+        transform: scale(0.20);
+      }
+    }*/
 }

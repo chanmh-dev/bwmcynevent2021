@@ -1,14 +1,14 @@
-
 body{
-  background-image: url("Images2/Water Offering-Pg 3.png");
+	background-color: #db3a2e;
+  background-image: url("Images2/Water Offering-Amended Pg 3.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: red;
+  /*height: 100%;*/
   background-size: auto 100%;
   overflow-y:hidden;
-}
 
+}
 .cups{
   position: relative;
   display: block;
@@ -68,8 +68,9 @@ body{
     display:inline-block;
 }
 #btn1{
+
   position: fixed;
-  left: 31vw;
+  left: 32vw;
   top: 55vh;
 }
 #btn1:focus {
@@ -117,14 +118,6 @@ body{
   .divider{
     width: 105px;
   }
-  /*
-  #btn1{
-  position: fixed;
-  left: 22vw;
-  top: 55vh;
-}*/
-
-
   .button button{
     padding: 100px;
     background-color: Transparent;
@@ -135,18 +128,6 @@ body{
   }
 
 }
-
-@media only screen
-  and (min-device-width: 481px)
-  and (max-device-width: 1044px){
-	  
-	  #btn1{
-	  position: fixed;
-	  left: 22vw;
-	  top: 55vh;
-	}  
- }
-
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 480px)
@@ -178,20 +159,21 @@ body{
       cursor:pointer;
       overflow: hidden;
     }
-	
     #btn1{
+
       position: fixed;
       left: 6vw;
-      top: 55vh;
+      top: 60vh;
     }
     #btn1:focus {
       outline: none;
       box-shadow: none;
     }
     #btn2{
+
       position: fixed;
       left: 37vw;
-      top: 55vh;
+      top: 60vh;
     }
     #btn2:focus {
       outline: none;
@@ -202,6 +184,73 @@ body{
 
       position: fixed;
       left: 69vw;
+      top: 60vh;
+    }
+    #btn3:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+}
+
+
+/*added for ipad, ipad pro - landscape*/
+@media only screen
+  and (min-device-width: 1024px) /*chg*/
+  and (max-device-width: 1366px) /*chg*/
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Water Offering-Amended Pg 3.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain; /*chg to contain */
+
+
+    }
+    .button{
+      position: absolute;
+      text-align: center;
+      top: 54vh;
+      left: 50vh;
+    }
+    .button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .button button{
+      padding: 6vh;
+      background-color: Transparent;
+      background-repeat:no-repeat;
+      border: none;
+      cursor:pointer;
+      overflow: hidden;
+    }
+    #btn1{
+
+      position: fixed;
+      left: 33vw;
+      top: 55vh;
+    }
+    #btn1:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    #btn2{
+
+      position: fixed;
+      left: 46vw;
+      top: 55vh;
+    }
+    #btn2:focus {
+      outline: none;	
+      box-shadow: none;
+      fill:none;
+    }
+    #btn3{
+
+      position: fixed;
+      left: 58vw;
       top: 55vh;
     }
     #btn3:focus {
@@ -210,3 +259,138 @@ body{
     }
 
 }
+
+/*added for ipad, ipad pro - portrait*/
+@media only screen
+  and (min-device-width: 768px) /*chg*/
+  and (max-device-width: 1024px) /*chg*/
+  and (orientation: portrait) /* chg*/  
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Water Offering-Mobile Pg 3 Amended.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+
+
+    }
+    .button{
+      position: absolute;
+      text-align: center;
+      top: 54vh;
+      left: 50vh;
+    }
+    .button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .button button{
+      padding: 6vh;
+      background-color: Transparent;
+      background-repeat:no-repeat;
+      border: none;
+      cursor:pointer;
+      overflow: hidden;
+    }
+    #btn1{
+
+      position: fixed;
+      left: 22vw;
+      top: 60vh;
+    }
+    #btn1:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    #btn2{
+
+      position: fixed;
+      left: 42vw;
+      top: 60vh;
+    }
+    #btn2:focus {
+      outline: none;
+      box-shadow: none;
+      fill:none;
+    }
+    #btn3{
+
+      position: fixed;
+      left: 61vw;
+      top: 60vh;
+    }
+    #btn3:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+}
+
+/*added for iphone X - landscape*/
+@media only screen
+  and (min-device-width: 812px) /*chg*/
+  and (max-device-width: 823px) /*chg*/
+  and (orientation: landscape) /*chg*/
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Water Offering-Amended Pg 3.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+
+
+    }
+    .button{
+      position: absolute;
+      text-align: center;
+      top: 54vh;
+      left: 50vh;
+    }
+    .button:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    .button button{
+      padding: 6vh;
+      background-color: Transparent;
+      background-repeat:no-repeat;
+      border: none;
+      cursor:pointer;
+      overflow: hidden;
+    }
+    #btn1{
+
+      position: fixed;
+      left: 37vw;
+      top: 56vh;
+    }
+    #btn1:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    #btn2{
+
+      position: fixed;
+      left: 47vw;
+      top: 56vh;
+    }
+    #btn2:focus {
+      outline: none;
+      box-shadow: none;
+      fill:none;
+    }
+    #btn3{
+
+      position: fixed;
+      left: 58vw;
+      top: 56vh;
+    }
+    #btn3:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+}
+

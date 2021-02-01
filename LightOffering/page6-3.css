@@ -1,11 +1,13 @@
 body{
+	background-color: #db3a2e;
   background-image: url("Images2/Light Offering-Pg 6-3 Amended.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: red;
+  /*height: 100%;*/
   background-size: auto 100%;
   overflow-y:hidden;
+
 }
 .cups{
   position: relative;
@@ -207,6 +209,224 @@ top: 91.5%;
     border: none;
     background-color: transparent;
     left: 10%;
+    top: 91.5%;
+    }
+    #btndonate:focus{
+      outline: none;
+    }
+
+}
+
+/*ipad pro landscape*/
+@media only screen
+  and (min-device-width: 1024px)
+  and (max-device-width: 1366px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Light Offering-Pg 6-3 Amended.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+
+
+    }
+
+    #btnmain{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 73.4%;
+    }
+    #btnmain:focus{
+      outline: none;
+    }
+
+
+    #btnoffer{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 77.5%;
+    }
+    #btnoffer:focus{
+      outline: none;
+    }
+
+    #btndonate{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 81.5%;
+    }
+    #btndonate:focus{
+      outline: none;
+    }
+
+}
+
+/*ipad, ipad pro portrait*/
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Light Offering-Mobile Pg 6-3.png");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+
+
+    }
+
+    #btnmain{
+      font-family: KaiTi;
+      position: absolute;
+    width: 70%;
+    height: 7vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 15%;
+    top: 81.4%;
+    }
+    #btnmain:focus{
+      outline: none;
+    }
+
+
+    #btnoffer{
+      font-family: KaiTi;
+      position: absolute;
+    width: 70%;
+    height: 7vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 15%;
+    top: 86.5%;
+    }
+    #btnoffer:focus{
+      outline: none;
+    }
+
+    #btndonate{
+      font-family: KaiTi;
+      position: absolute;
+    width: 70%;
+    height: 7vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 15%;
+    top: 91.5%;
+    }
+    #btndonate:focus{
+      outline: none;
+    }
+
+}
+
+/*added for iphone X - landscape*/
+@media only screen
+  and (min-device-width: 812px)
+  and (max-device-width: 823px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      background-image: url("Images2/Light Offering-Pg 6-3 Amended.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: contain;
+
+
+    }
+
+    #btnmain{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 81.4%;
+    }
+    #btnmain:focus{
+      outline: none;
+    }
+
+
+    #btnoffer{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
+    top: 86.5%;
+    }
+    #btnoffer:focus{
+      outline: none;
+    }
+
+    #btndonate{
+      font-family: KaiTi;
+      position: absolute;
+    width: 25%;
+    height: 2vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-size: 2vw;
+    border: none;
+    background-color: transparent;
+    left: 75%;
     top: 91.5%;
     }
     #btndonate:focus{
