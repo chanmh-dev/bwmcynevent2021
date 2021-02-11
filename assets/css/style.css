@@ -912,6 +912,13 @@ section {
   margin-right: 20px;
 }
 
+.schedule .card-header .images-box1 {
+  width: 150px;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+}
+
 .schedule .card-header .images-box img {
   border-radius: 50%;
 }
