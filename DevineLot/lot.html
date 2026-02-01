@@ -57,12 +57,23 @@ div.sticky {
     font-weight:bold
 }
 
+#rcorners1 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 15px; 
+  width: 275px;
+  height: 270px;  
+  background: #276CF5;//#73AD21;
+  color: white;
+  text-align: center
+}
+
 #rcorners2 {
   border-radius: 25px;
   border: 2px solid #73AD21;
   padding: 15px; 
   width: 275px;
-  height: 255px;  
+  height: 390px;  
   background: #f50057;//#73AD21;
   color: white;
   text-align: center
@@ -90,7 +101,7 @@ div.sticky {
    <div class="sticky text-center">
 	  <div class="btn-group">
 		<button id = "donation" type="button" class="btn btn-danger">Donation (捐款)</button>
-		<!--<button id = "service" type="button" class="btn btn-success">Lot Interpretation Service (解签服务)</button>-->
+		<button id = "service" type="button" class="btn btn-success">Lot Interpretation Service (解签服务)</button>
 		<button id = "home" type="button" class="btn btn-primary">Home (主页)</button>
 	  </div>   
    </div>	
@@ -102,9 +113,12 @@ div.sticky {
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<div class="modal-body">
-					<h5>想要进一步了解您抽到的签，请登入以下zoom账号: <br> For lot interpretaton assistance, please join the following Zoom session:<br><br></h5>
-					<h5 id="rcorners2">Zoom ID: 6565477890 <br>Password: 1234<br><br>大年初一到初三 <br> First to third day of the Chinese Lunar New Year<br>(12/2) 3pm - 5pm <br> (13/2) 10am - 12pm <br> (14/2) 7pm - 9pm
+					<h5>求了灵签看不明白？解签师在此为您免费解答疑惑！ <br> Unclear about devine lot? Don't worry, our on-site experience interpreters are here to assist you...FREE!<br><br></h5>
+					<h5 id="rcorners2">吉祥宝聚寺，观音殿 <br>（1楼） <br>BW Monastery,Guanyin Hall (Level 1)<br><br>1 Woodlands Drive 16 No.1 Singapore 737764<br><br>Mon-Fri (星期一至五）<br>11.30am - 1.30pm <br><br>Weekends, 1st and 15th Lunar Calendar <br> 周末，初一，初十五 <br> 10.30am - 2pm
 				</div>
+				<div class="modal-body">
+					<h5 id="rcorners1">吉祥宝聚寺位于明古莲大厦，观音殿 <br>BW Monastery,Guanyin Hall (Bencoolen)<br><br>180 Bencoolen St #01-03 The Bencoolen Singapore 189646<br><br> 9.30am - 5pm
+				</div>				
 			</div>
 		</div>
 	</div>
@@ -152,6 +166,10 @@ $('#donation').on('click', function (e) {
 $('#home').on('click', function (e) {
 	window.location.href = 'https://bwmonastery.org.sg/'
 })
+
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
 
 /*
 $('#home').on('click', function (e) {
